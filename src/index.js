@@ -9,7 +9,7 @@ import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: thunk,
+  middleware: [thunk],
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
