@@ -1,1 +1,1 @@
-export const MOVIES_LOAD = "MOVIES_LOAD";
+export const GET_250_MOVIES = "GET_250_MOVIES";

@@ -1,4 +1,5 @@
 import "./Header.scss";
+import { AiOutlineSearch } from "react-icons/ai";
 
 function Header() {
   return (
@@ -19,9 +20,8 @@ function Header() {
       </div>
 
       <div className="header-wrapper__right-side">
-        {/* <div className="header-wrapper__input-wrapper"> */}
-        <input type="text" className="header-wrapper__input" />
-        {/* </div> */}
+        <input type="text" className="header-wrapper__input" />{" "}
+        <AiOutlineSearch style={{ color: "white", fontSize: "30px" }} />
       </div>
     </header>
   );
