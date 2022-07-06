@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -8,7 +10,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #222226;
+  /* background-color: #222226; */
+  background-image: linear-gradient(
+    310deg,
+    hsl(240deg 6% 14%) 0%,
+    hsl(349deg 22% 17%) 44%,
+    hsl(355deg 33% 19%) 65%,
+    hsl(357deg 40% 21%) 78%,
+    hsl(358deg 46% 23%) 87%,
+    hsl(359deg 50% 25%) 94%,
+    hsl(0deg 53% 26%) 100%
+  );
 }
 
 code {
