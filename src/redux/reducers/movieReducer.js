@@ -1,4 +1,8 @@
-import { GET_250_MOVIES } from "../types/types";
+import {
+  GET_250_MOVIES,
+  GET_100_MOVIES,
+  GET_AWAIT_MOVIES,
+} from "../types/types";
 
 const initialState = {
   movies250: [],
@@ -12,6 +16,18 @@ export const movieReducer = (state = initialState, action) => {
       return {
         ...state,
         movies250: action.data250,
+      };
+
+    case GET_100_MOVIES:
+      return {
+        ...state,
+        movies100: action.data100,
+      };
+
+    case GET_AWAIT_MOVIES:
+      return {
+        ...state,
+        moviesAwait: action.dataAwait,
       };
 
     default:

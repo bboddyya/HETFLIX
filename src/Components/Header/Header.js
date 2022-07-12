@@ -21,7 +21,7 @@ function Header() {
 
       <div className="header-wrapper__right-side">
         <input type="text" className="header-wrapper__input" />{" "}
-        <AiOutlineSearch style={{ color: "white", fontSize: "30px" }} />
+        <AiOutlineSearch style={{ color: "white", fontSize: "27px" }} />
       </div>
     </header>
   );
