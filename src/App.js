@@ -8,17 +8,18 @@ import { useSelector } from "react-redux";
 
 function App() {
   const [spinOn, setSpinOn] = useState(true);
+  const films250Ready = useSelector((state) => state.movie.movies250.isLoading);
+  const films100Ready = useSelector((state) => state.movie.movies100.isLoading);
+  const filmsAwaitReady = useSelector(
+    (state) => state.movie.moviesAwait.isLoading
+  );
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setSpinOn(false);
-  //   }, 1300);
-  // }, []);
+  // useEffect(() => {}, [films250Ready, films100Ready, filmsAwaitReady]);
   return (
     <div className="App">
       <Header />
-
-      {spinOn ? (
+      <Movie />
+      {/* {films250Ready && films100Ready && filmsAwaitReady ? (
         <ClipLoader
           color="red"
           loading
@@ -28,7 +29,7 @@ function App() {
         />
       ) : (
         <Movie />
-      )}
+      )} */}
     </div>
   );
 }
