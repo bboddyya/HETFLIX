@@ -1,8 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getTop100 } from "../../../redux/actions/actions";
-
-import "./Movie100.css";
 import "../Movie.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -12,7 +10,7 @@ import { getRatingColor } from "../../../utils/getColor";
 
 function Top100() {
   const dispatch = useDispatch();
-  const movies100 = useSelector((state) => state.movie.movies100);
+  const movies100 = useSelector((state) => state.movie.movies100.movieList);
 
   useEffect(() => {
     dispatch(getTop100(1));

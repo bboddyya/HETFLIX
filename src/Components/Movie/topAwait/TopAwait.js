@@ -7,11 +7,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { settings } from "../../../utils/sliderSettings";
-import { getRatingColor } from "../../../utils/getColor";
+import { getAwaitRatingColor } from "../../../utils/getColor";
 
 function TopAwait() {
   const dispatch = useDispatch();
-  const movies100 = useSelector((state) => state.movie.moviesAwait);
+  const moviesAwait = useSelector((state) => state.movie.moviesAwait.movieList);
 
   useEffect(() => {
     dispatch(getTopAwait(1));
@@ -22,17 +22,19 @@ function TopAwait() {
         <h1 className="movie__title">САМЫЕ ОЖИДАЕМЫЕ ФИЛЬМЫ</h1>
 
         <Slider {...settings}>
-          {movies100.map((el) => {
+          {moviesAwait.map((el) => {
             return (
               <div
                 key={el.filmId}
                 className="movie__wrapper"
                 onClick={() => console.log(el.filmId)}
               >
-                <div className="movie__picture">
+                <div className="movie__picture" style={{ maxHeight: "430px" }}>
                   <div
                     className="movie__rating"
-                    style={{ backgroundColor: `${getRatingColor(el.rating)}` }}
+                    style={{
+                      backgroundColor: `${getAwaitRatingColor(el.rating)}`,
+                    }}
                   >
                     {el.rating}
                   </div>

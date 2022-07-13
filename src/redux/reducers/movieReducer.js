@@ -5,9 +5,9 @@ import {
 } from "../types/types";
 
 const initialState = {
-  movies250: [],
-  movies100: [],
-  moviesAwait: [],
+  movies250: { movieList: [], isLoading: true },
+  movies100: { movieList: [], isLoading: true },
+  moviesAwait: { movieList: [], isLoading: true },
 };
 
 export const movieReducer = (state = initialState, action) => {
@@ -15,19 +15,22 @@ export const movieReducer = (state = initialState, action) => {
     case GET_250_MOVIES:
       return {
         ...state,
-        movies250: action.data250,
+        movies250: { movieList: action.data250, isLoading: false },
+        // isLoading: false,
       };
 
     case GET_100_MOVIES:
       return {
         ...state,
-        movies100: action.data100,
+        movies100: { movieList: action.data100, isLoading: false },
+        // isLoading: false,
       };
 
     case GET_AWAIT_MOVIES:
       return {
         ...state,
-        moviesAwait: action.dataAwait,
+        moviesAwait: { movieList: action.dataAwait, isLoading: false },
+        //
       };
 
     default:

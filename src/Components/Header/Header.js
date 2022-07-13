@@ -20,8 +20,14 @@ function Header() {
       </div>
 
       <div className="header-wrapper__right-side">
-        <input type="text" className="header-wrapper__input" />{" "}
-        <AiOutlineSearch style={{ color: "white", fontSize: "27px" }} />
+        <input
+          type="text"
+          className="header-wrapper__input"
+          placeholder="Поиск"
+        />{" "}
+        <div className="header-wrapper__input-control">
+          <AiOutlineSearch className="header-wrapper__search-icon" />
+        </div>
       </div>
     </header>
   );

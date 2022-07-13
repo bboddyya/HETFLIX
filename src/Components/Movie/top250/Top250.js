@@ -10,7 +10,11 @@ import { getRatingColor } from "../../../utils/getColor";
 
 function Top250() {
   const dispatch = useDispatch();
-  const movies250 = useSelector((state) => state.movie.movies250);
+  const movies250 = useSelector((state) => {
+    console.log(state.movie.movies250.movieList);
+    return state.movie.movies250.movieList;
+  });
+
   useEffect(() => {
     dispatch(getTop250(1));
   }, []);
@@ -34,7 +38,11 @@ function Top250() {
                 >
                   {el.rating}
                 </div>
-                <img src={el.posterUrlPreview} alt={`${el.nameRu}`} />
+                <img
+                  src={el.posterUrlPreview}
+                  alt={`${el.nameRu}`}
+                  style={{ maxHeight: "430px" }}
+                />
               </div>
             </div>
           );

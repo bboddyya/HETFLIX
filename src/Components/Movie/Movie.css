@@ -4,6 +4,7 @@
   width: 85%;
   height: 30%;
   font-family: "Oswald", sans-serif;
+  position: relative;
 }
 
 .movie__card {
@@ -37,6 +38,7 @@
   width: 100%;
   border-radius: 20px;
   object-fit: cover;
+  max-height: 430px;
 }
 
 .movie__rating {
@@ -57,6 +59,14 @@
   font-size: 15px;
   font-weight: 600;
   padding-left: 10px;
+}
+
+.movie__spinner {
+  position: absolute;
+  top: 45%;
+  right: 45%;
+  z-index: 15;
+  /* margin-right: -50%; */
 }
 
 .slick-slide > div {

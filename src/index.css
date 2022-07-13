@@ -24,6 +24,7 @@ body {
     hsl(359deg 50% 25%) 94%,
     hsl(0deg 53% 26%) 100%
   );
+  overflow-x: hidden;
 }
 
 code {
