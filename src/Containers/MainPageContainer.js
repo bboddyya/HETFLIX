@@ -1,10 +1,7 @@
 import React from "react";
-import Header from "../Components/Header/Header";
-import Movie from "../Components/Movie/Movie";
-import { useState, useEffect } from "react";
-import { ClipLoader } from "react-spinners";
-import { useDispatch, useSelector } from "react-redux";
-import { getTop250 } from "../redux/actions/actions";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getTop100, getTop250, getTopAwait } from "../redux/actions/actions";
 import MainPage from "../Components/MainPage/MainPage";
 
 function MainPageContainer() {
@@ -12,6 +9,8 @@ function MainPageContainer() {
 
   useEffect(() => {
     dispatch(getTop250(1));
+    dispatch(getTop100(1));
+    dispatch(getTopAwait(1));
   }, []);
 
   return <MainPage />;

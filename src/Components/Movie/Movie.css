@@ -24,6 +24,17 @@
   font-weight: 300;
 }
 
+.movie__title span {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.537);
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.movie__title span:hover {
+  color: rgba(255, 255, 255, 0.766);
+}
+
 .movie__wrapper {
   cursor: pointer;
   width: 30%;

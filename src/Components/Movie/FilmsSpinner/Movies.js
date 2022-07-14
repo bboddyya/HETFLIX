@@ -1,6 +1,3 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getTop250 } from "../../../redux/actions/actions";
 import "../Movie.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -8,18 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 import { settings } from "../../../utils/sliderSettings";
 import { getRatingColor } from "../../../utils/getColor";
 
-function Top250({ props }) {
-  const dispatch = useDispatch();
-  const movies250 = useSelector((state) => {
-    console.log(state.movie.movies250.movieList);
-    return state.movie.movies250.movieList;
-  });
+function FilmsSpinner(props) {
+  const movies250 = props.movies250;
 
-  console.log("props>", props);
-
-  // useEffect(() => {
-  //   dispatch(getTop250(1));
-  // }, []);
+  console.log("props>", movies250);
 
   return (
     <div className="movie__card">
@@ -57,4 +46,4 @@ function Top250({ props }) {
   );
 }
 
-export default Top250;
+export default FilmsSpinner;

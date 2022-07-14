@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Movie from "../Movie/Movie";
 import { ClipLoader } from "react-spinners";
 import { useSelector } from "react-redux";
+
 function MainPage() {
   const films250Ready = useSelector((state) => state.movie.movies250.isLoading);
 

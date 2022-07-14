@@ -1,20 +1,25 @@
 import "./Movie.css";
-import Top250 from "./top250/Top250";
+import FilmsSpinner from "./FilmsSpinner/Movies";
 import Top100 from "./top100/Top100";
 import TopAwait from "./topAwait/TopAwait";
 import { useSelector } from "react-redux";
 
 function Movie() {
-  const title250 = "250 ЛУЧШИХ ФИЛЬМОВ";
   const movies250 = useSelector((state) => {
     return state.movie.movies250.movieList;
+  });
+  const movies100 = useSelector((state) => {
+    return state.movie.movies100.movieList;
+  });
+  const moviesAwait = useSelector((state) => {
+    return state.movie.moviesAwait.movieList;
   });
 
   return (
     <div className="movie">
-      <Top250 />
-      <Top100 />
-      <TopAwait />
+      <FilmsSpinner movies250={movies250} />
+      <FilmsSpinner movies250={movies100} />
+      <FilmsSpinner movies250={moviesAwait} />
     </div>
   );
 }
