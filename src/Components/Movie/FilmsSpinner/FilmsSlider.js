@@ -4,11 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { settings } from "../../../utils/sliderSettings";
 import { getRatingColor } from "../../../utils/getColor";
+import { motion } from "framer-motion";
 
-function FilmsSpinner(props) {
-  const movies250 = props.movies250;
-
-  console.log("props>", movies250);
+function FilmsSlider(props) {
+  const movies = props.movies;
 
   return (
     <div className="movie__card">
@@ -18,9 +17,11 @@ function FilmsSpinner(props) {
       </div>
 
       <Slider {...settings}>
-        {movies250.map((el) => {
+        {movies.map((el) => {
           return (
-            <div
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.95 }}
               key={el.filmId}
               className="movie__wrapper"
               onClick={() => console.log(el.filmId)}
@@ -32,13 +33,15 @@ function FilmsSpinner(props) {
                 >
                   {el.rating}
                 </div>
-                <img
+                <motion.img
                   src={el.posterUrlPreview}
                   alt={`${el.nameRu}`}
                   style={{ maxHeight: "430px" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                 />
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </Slider>
@@ -46,4 +49,4 @@ function FilmsSpinner(props) {
   );
 }
 
-export default FilmsSpinner;
+export default FilmsSlider;

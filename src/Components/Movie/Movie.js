@@ -1,8 +1,7 @@
 import "./Movie.css";
-import FilmsSpinner from "./FilmsSpinner/Movies";
-import Top100 from "./top100/Top100";
-import TopAwait from "./topAwait/TopAwait";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
+import FilmsSlider from "./FilmsSpinner/FilmsSlider";
 
 function Movie() {
   const movies250 = useSelector((state) => {
@@ -15,12 +14,23 @@ function Movie() {
     return state.movie.moviesAwait.movieList;
   });
 
+  const variants = {
+    open: {
+      transition: { staggerChildren: 0.1, delayChildren: 1 },
+    },
+  };
+
   return (
-    <div className="movie">
-      <FilmsSpinner movies250={movies250} />
-      <FilmsSpinner movies250={movies100} />
-      <FilmsSpinner movies250={moviesAwait} />
-    </div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      variants={variants}
+      className="movie"
+    >
+      <FilmsSlider movies={movies250} />
+      <FilmsSlider movies={movies100} />
+      <FilmsSlider movies={moviesAwait} />
+    </motion.div>
   );
 }
 

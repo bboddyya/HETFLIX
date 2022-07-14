@@ -6,11 +6,15 @@ import { useSelector } from "react-redux";
 
 function MainPage() {
   const films250Ready = useSelector((state) => state.movie.movies250.isLoading);
+  const films100Ready = useSelector((state) => state.movie.movies100.isLoading);
+  const filmsAwaitReady = useSelector(
+    (state) => state.movie.moviesAwait.isLoading
+  );
 
   return (
     <div className="App">
       <Header />
-      {films250Ready ? (
+      {films250Ready && films100Ready && filmsAwaitReady ? (
         <ClipLoader
           color="red"
           loading

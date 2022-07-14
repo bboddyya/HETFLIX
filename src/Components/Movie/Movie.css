@@ -25,10 +25,11 @@
 }
 
 .movie__title span {
-  font-size: 18px;
+  font-size: 19px;
   color: rgba(255, 255, 255, 0.537);
   font-weight: 300;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .movie__title span:hover {
@@ -38,13 +39,7 @@
 .movie__wrapper {
   cursor: pointer;
   width: 30%;
-  transition: all 0.3s ease;
   overflow: visible;
-}
-
-.movie__wrapper:hover {
-  opacity: 0.8;
-  transform: scale(1.02);
 }
 
 .movie__picture {
