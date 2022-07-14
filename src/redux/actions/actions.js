@@ -1,10 +1,14 @@
 import { GET_250_MOVIES } from "../types/types";
 import { GET_100_MOVIES } from "../types/types";
 import { GET_AWAIT_MOVIES } from "../types/types";
+import { GET_250_ISLOADING } from "../types/types";
 import { configuration } from "../../utils/configurationForApi";
 
 export function getTop250(page) {
   return async (dispatch) => {
+    dispatch({
+      type: GET_250_ISLOADING,
+    });
     const response = await fetch(
       `https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_250_BEST_FILMS&page=${page}`,
       configuration

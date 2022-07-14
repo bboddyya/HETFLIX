@@ -2,12 +2,13 @@ import {
   GET_250_MOVIES,
   GET_100_MOVIES,
   GET_AWAIT_MOVIES,
+  GET_250_ISLOADING,
 } from "../types/types";
 
 const initialState = {
-  movies250: { movieList: [], isLoading: true },
-  movies100: { movieList: [], isLoading: true },
-  moviesAwait: { movieList: [], isLoading: true },
+  movies250: { movieList: [], isLoading: false },
+  movies100: { movieList: [], isLoading: false },
+  moviesAwait: { movieList: [], isLoading: false },
 };
 
 export const movieReducer = (state = initialState, action) => {
@@ -16,22 +17,27 @@ export const movieReducer = (state = initialState, action) => {
       return {
         ...state,
         movies250: { movieList: action.data250, isLoading: false },
-        // isLoading: false,
       };
-
-    case GET_100_MOVIES:
+    case GET_250_ISLOADING:
+      const { movies250 } = state;
       return {
         ...state,
-        movies100: { movieList: action.data100, isLoading: false },
-        // isLoading: false,
-      };
 
-    case GET_AWAIT_MOVIES:
-      return {
-        ...state,
-        moviesAwait: { movieList: action.dataAwait, isLoading: false },
-        //
+        movies250: { ...movies250, isLoading: true },
       };
+    // case GET_100_MOVIES:
+    //   return {
+    //     ...state,
+    //     movies100: { movieList: action.data100, isLoading: false },
+    //     // isLoading: false,
+    //   };
+
+    // case GET_AWAIT_MOVIES:
+    //   return {
+    //     ...state,
+    //     moviesAwait: { movieList: action.dataAwait, isLoading: false },
+    //     //
+    //   };
 
     default:
       return state;

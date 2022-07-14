@@ -8,20 +8,25 @@ import "slick-carousel/slick/slick-theme.css";
 import { settings } from "../../../utils/sliderSettings";
 import { getRatingColor } from "../../../utils/getColor";
 
-function Top250() {
+function Top250({ props }) {
   const dispatch = useDispatch();
   const movies250 = useSelector((state) => {
     console.log(state.movie.movies250.movieList);
     return state.movie.movies250.movieList;
   });
 
-  useEffect(() => {
-    dispatch(getTop250(1));
-  }, []);
+  console.log("props>", props);
+
+  // useEffect(() => {
+  //   dispatch(getTop250(1));
+  // }, []);
 
   return (
     <div className="movie__card">
-      <h1 className="movie__title">250 ЛУЧШИХ ФИЛЬМОВ</h1>
+      <div className="movie__title">
+        <h1>250 ЛУЧШИХ ФИЛЬМОВ</h1>
+        <span>Показать больше</span>
+      </div>
 
       <Slider {...settings}>
         {movies250.map((el) => {
