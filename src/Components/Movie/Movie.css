@@ -36,6 +36,10 @@
   color: rgba(255, 255, 255, 0.766);
 }
 
+.movie__title a {
+  text-decoration: none;
+}
+
 .movie__wrapper {
   cursor: pointer;
   width: 30%;

@@ -2,6 +2,7 @@ import "./Movie.css";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import FilmsSlider from "./FilmsSpinner/FilmsSlider";
+import { filmSLiderProperties } from "../../utils/filmsSliderProperties";
 
 function Movie() {
   const movies250 = useSelector((state) => {
@@ -27,9 +28,18 @@ function Movie() {
       variants={variants}
       className="movie"
     >
-      <FilmsSlider movies={movies250} />
-      <FilmsSlider movies={movies100} />
-      <FilmsSlider movies={moviesAwait} />
+      <FilmsSlider
+        movies={movies250}
+        filmSLiderProperties={{ ...filmSLiderProperties.top250 }}
+      />
+      <FilmsSlider
+        movies={movies100}
+        filmSLiderProperties={{ ...filmSLiderProperties.top100 }}
+      />
+      <FilmsSlider
+        movies={moviesAwait}
+        filmSLiderProperties={{ ...filmSLiderProperties.topAwait }}
+      />
     </motion.div>
   );
 }

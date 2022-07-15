@@ -5,15 +5,20 @@ import "slick-carousel/slick/slick-theme.css";
 import { settings } from "../../../utils/sliderSettings";
 import { getRatingColor } from "../../../utils/getColor";
 import { motion } from "framer-motion";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function FilmsSlider(props) {
   const movies = props.movies;
+  const url = props.filmSLiderProperties.url;
+  const title = props.filmSLiderProperties.title;
 
   return (
     <div className="movie__card">
       <div className="movie__title">
-        <h1>250 ЛУЧШИХ ФИЛЬМОВ</h1>
-        <span>Показать больше</span>
+        <h1>{title}</h1>
+        <Link to={url}>
+          <span>Показать больше</span>
+        </Link>
       </div>
 
       <Slider {...settings}>
