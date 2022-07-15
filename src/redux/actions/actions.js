@@ -5,6 +5,8 @@ import {
   GET_250_ISLOADING,
   GET_100_ISLOADING,
   GET_AWAIT_ISLOADING,
+  GET_MOVIE_BY_ID,
+  GET_MOVIE_BY_ID_ISLOADING,
 } from "../types/types";
 import { configuration } from "../../utils/configurationForApi";
 
@@ -61,4 +63,16 @@ export function getTopAwait(page) {
   };
 }
 
-export function setSpinner() {}
+export function getFilmById(id) {
+  return async (dispatch) => {
+    const response = await fetch(
+      `https://kinopoiskapiunofficial.tech/api/v2.2/films/${id} `,
+      configuration
+    );
+    const film = response.json();
+    dispatch({
+      type: GET_MOVIE_BY_ID,
+      dataById: film,
+    });
+  };
+}

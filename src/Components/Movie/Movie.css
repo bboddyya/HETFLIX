@@ -40,6 +40,11 @@
   text-decoration: none;
 }
 
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
 .movie__wrapper {
   cursor: pointer;
   width: 30%;

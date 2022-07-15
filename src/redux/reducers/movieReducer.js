@@ -5,12 +5,15 @@ import {
   GET_250_ISLOADING,
   GET_100_ISLOADING,
   GET_AWAIT_ISLOADING,
+  GET_MOVIE_BY_ID,
+  GET_MOVIE_BY_ID_ISLOADING,
 } from "../types/types";
 
 const initialState = {
   movies250: { movieList: [], isLoading: false },
   movies100: { movieList: [], isLoading: false },
   moviesAwait: { movieList: [], isLoading: false },
+  movieById: { movie: [], isLoading: false },
 };
 
 export const movieReducer = (state = initialState, action) => {
@@ -55,6 +58,19 @@ export const movieReducer = (state = initialState, action) => {
         ...state,
 
         moviesAwait: { ...moviesAwait, isLoading: true },
+      };
+
+    case GET_MOVIE_BY_ID:
+      return {
+        ...state,
+        movieById: { movie: action.dataById, isLoading: true },
+      };
+
+    case GET_MOVIE_BY_ID_ISLOADING:
+      const { movieById } = state;
+      return {
+        ...state,
+        movieById: { ...movieById, isLoading: true },
       };
 
     default:

@@ -26,7 +26,8 @@ async function fetchFilms() {
   const data = await response.json();
 }
 
-fetchFilms();
 
 
 
+
+https://kinopoiskapiunofficial.tech/api/v2.2/films/${id} - фильм по id 

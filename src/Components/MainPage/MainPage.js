@@ -4,6 +4,7 @@ import Movie from "../Movie/Movie";
 import { ClipLoader } from "react-spinners";
 import { useSelector } from "react-redux";
 import { Routes, Link, Route } from "react-router-dom";
+import SingleMovie from "../Movie/Single Movie/SingleMovie";
 
 function MainPage() {
   const films250Ready = useSelector((state) => state.movie.movies250.isLoading);
@@ -32,6 +33,8 @@ function MainPage() {
             )
           }
         />
+
+        <Route path="/top250/:id" element={<SingleMovie />} />
       </Routes>
     </div>
   );

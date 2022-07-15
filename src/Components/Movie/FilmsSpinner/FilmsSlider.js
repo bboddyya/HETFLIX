@@ -31,21 +31,23 @@ function FilmsSlider(props) {
               className="movie__wrapper"
               onClick={() => console.log(el.filmId)}
             >
-              <div className="movie__picture">
-                <div
-                  className="movie__rating"
-                  style={{ backgroundColor: `${getRatingColor(el.rating)}` }}
-                >
-                  {el.rating}
+              <Link to={`/top250/${el.filmId}`}>
+                <div className="movie__picture">
+                  <div
+                    className="movie__rating"
+                    style={{ backgroundColor: `${getRatingColor(el.rating)}` }}
+                  >
+                    {el.rating}
+                  </div>
+                  <motion.img
+                    src={el.posterUrlPreview}
+                    alt={`${el.nameRu}`}
+                    style={{ maxHeight: "430px" }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                  />
                 </div>
-                <motion.img
-                  src={el.posterUrlPreview}
-                  alt={`${el.nameRu}`}
-                  style={{ maxHeight: "430px" }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                />
-              </div>
+              </Link>
             </motion.div>
           );
         })}
@@ -53,5 +55,7 @@ function FilmsSlider(props) {
     </div>
   );
 }
+
+//сделать компонент sliderElement
 
 export default FilmsSlider;
