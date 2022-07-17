@@ -36,12 +36,3 @@ export const settings = {
     },
   ],
 };
-
-// export const settings = {
-//   dots: true,
-//   infinite: true,
-//   slidesToShow: 3,
-//   slidesToScroll: 1,
-//   vertical: true,
-//   verticalSwiping: true,
-// };

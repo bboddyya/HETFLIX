@@ -7,6 +7,11 @@
   position: relative;
 }
 
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .movie__card {
   margin-bottom: 40px;
 }
@@ -34,15 +39,6 @@
 
 .movie__title span:hover {
   color: rgba(255, 255, 255, 0.766);
-}
-
-.movie__title a {
-  text-decoration: none;
-}
-
-a {
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
 }
 
 .movie__wrapper {

@@ -3,9 +3,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { settings } from "../../../utils/sliderSettings";
+import { Link } from "react-router-dom";
+import SliderElement from "./SliderElement";
 import { getRatingColor } from "../../../utils/getColor";
 import { motion } from "framer-motion";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function FilmsSlider(props) {
   const movies = props.movies;
@@ -21,7 +22,7 @@ function FilmsSlider(props) {
         </Link>
       </div>
 
-      <Slider {...settings}>
+      <Slider {...settings} className="movie__slider">
         {movies.map((el) => {
           return (
             <motion.div
@@ -29,7 +30,6 @@ function FilmsSlider(props) {
               whileTap={{ scale: 0.95 }}
               key={el.filmId}
               className="movie__wrapper"
-              onClick={() => console.log(el.filmId)}
             >
               <Link to={`/top250/${el.filmId}`}>
                 <div className="movie__picture">
@@ -39,6 +39,7 @@ function FilmsSlider(props) {
                   >
                     {el.rating}
                   </div>
+
                   <motion.img
                     src={el.posterUrlPreview}
                     alt={`${el.nameRu}`}
@@ -51,11 +52,13 @@ function FilmsSlider(props) {
             </motion.div>
           );
         })}
+
+        {/* {movies.map((props) => {
+          return <SliderElement {...props} key={props.id} />;
+        })} */}
       </Slider>
     </div>
   );
 }
-
-//сделать компонент sliderElement
 
 export default FilmsSlider;
