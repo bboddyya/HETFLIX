@@ -1,0 +1,18 @@
+.pagination {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;
+  row-gap: 30px;
+  justify-items: center;
+  grid-auto-columns: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .pagination__film {
+    background-color: grey;
+    border: solid blue 1px;
+    width: 230px;
+    height: 420px;
+    text-align: center;
+  }
+}
