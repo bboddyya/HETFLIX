@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import Movie from "../Movie/Movie";
 import { ClipLoader } from "react-spinners";
 import { useSelector } from "react-redux";
-import { Routes, Link, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import SingleMovie from "../Movie/Single Movie/SingleMovie";
 import Pagination250 from "../Pagination/Pagination250";
 
@@ -16,7 +16,6 @@ function MainPage() {
 
   return (
     <div className="App">
-      <Header />
       <Routes>
         <Route
           path="/"
@@ -34,7 +33,7 @@ function MainPage() {
             )
           }
         />
-        <Route path="/top" element={<Pagination250 />} />
+        <Route path="/films/top250" element={<Pagination250 />} />
 
         <Route path="/top250/:id" element={<SingleMovie />} />
       </Routes>

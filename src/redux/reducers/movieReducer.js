@@ -7,6 +7,9 @@ import {
   GET_AWAIT_ISLOADING,
   GET_MOVIE_BY_ID,
   GET_MOVIE_BY_ID_ISLOADING,
+  SET_PAGE,
+  GET_250_MOVIES_FULL_LIST,
+  CLEAR_250_LIST,
 } from "../types/types";
 
 const initialState = {
@@ -14,31 +17,54 @@ const initialState = {
   movies100: { movieList: [], isLoading: false },
   moviesAwait: { movieList: [], isLoading: false },
   movieById: { movie: [], isLoading: false },
+  moviesFullList250: [],
+  pageForPagination: 4,
 };
 
 export const movieReducer = (state = initialState, action) => {
+  const { movies250 } = state;
+  const { movies100 } = state;
+  const { moviesAwait } = state;
+  const { movieById } = state;
+
   switch (action.type) {
     case GET_250_MOVIES:
       return {
         ...state,
-        movies250: { movieList: action.data250, isLoading: false },
+        movies250: {
+          movieList: [...movies250.movieList, ...action.data250],
+          isLoading: false,
+        },
       };
     case GET_250_ISLOADING:
-      const { movies250 } = state;
       return {
         ...state,
 
         movies250: { ...movies250, isLoading: true },
       };
+
+    case GET_250_MOVIES_FULL_LIST:
+      return {
+        ...state,
+        moviesFullList250: [...state.moviesFullList250, ...action.dataFull250],
+      };
+
+    case CLEAR_250_LIST:
+      return {
+        ...state,
+        moviesFullList250: [],
+      };
     case GET_100_MOVIES:
       return {
         ...state,
-        movies100: { movieList: action.data100, isLoading: false },
-        // isLoading: false,
+        movies100: {
+          ...movies100,
+          movieList: [...action.data100],
+          isLoading: false,
+        },
       };
 
     case GET_100_ISLOADING:
-      const { movies100 } = state;
       return {
         ...state,
 
@@ -48,12 +74,15 @@ export const movieReducer = (state = initialState, action) => {
     case GET_AWAIT_MOVIES:
       return {
         ...state,
-        moviesAwait: { movieList: action.dataAwait, isLoading: false },
+        moviesAwait: {
+          ...moviesAwait,
+          movieList: [...action.dataAwait],
+          isLoading: false,
+        },
         //
       };
 
     case GET_AWAIT_ISLOADING:
-      const { moviesAwait } = state;
       return {
         ...state,
 
@@ -63,14 +92,19 @@ export const movieReducer = (state = initialState, action) => {
     case GET_MOVIE_BY_ID:
       return {
         ...state,
-        movieById: { movie: action.dataById, isLoading: true },
+        movieById: { movie: action.dataById, isLoading: false },
       };
 
     case GET_MOVIE_BY_ID_ISLOADING:
-      const { movieById } = state;
       return {
         ...state,
         movieById: { ...movieById, isLoading: true },
+      };
+
+    case SET_PAGE:
+      return {
+        ...state,
+        pageForPagination: state.pageForPagination + 1,
       };
 
     default:
