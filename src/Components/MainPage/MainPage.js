@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "../Header/Header";
 import Movie from "../Movie/Movie";
 import { ClipLoader } from "react-spinners";
 import { useSelector } from "react-redux";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Switch } from "react-router-dom";
 import SingleMovie from "../Movie/Single Movie/SingleMovie";
-import Pagination250 from "../Pagination/Pagination250";
 
 function MainPage() {
   const films250Ready = useSelector((state) => state.movie.movies250.isLoading);
@@ -33,9 +31,6 @@ function MainPage() {
             )
           }
         />
-        <Route path="/films/top250" element={<Pagination250 />} />
-
-        <Route path="/top250/:id" element={<SingleMovie />} />
       </Routes>
     </div>
   );

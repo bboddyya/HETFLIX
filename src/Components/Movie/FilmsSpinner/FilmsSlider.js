@@ -31,7 +31,7 @@ function FilmsSlider(props) {
               key={el.filmId}
               className="movie__wrapper"
             >
-              <Link to={`/top250/${el.filmId}`}>
+              <Link to={`/film/${el.filmId}`}>
                 <div className="movie__picture">
                   <div
                     className="movie__rating"

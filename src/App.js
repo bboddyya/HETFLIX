@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import MainPageContainer from "./Containers/MainPageContainer";
 import PaginationContainer from "./Containers/PaginationContainer";
+import SingleMovie from "./Components/Movie/Single Movie/SingleMovie";
 function App() {
   return (
     <BrowserRouter>
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPageContainer />} />
         <Route path="/films" element={<PaginationContainer />} />
+        <Route path="/film/:id" element={<SingleMovie />} />
       </Routes>
     </BrowserRouter>
   );

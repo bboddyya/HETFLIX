@@ -1,33 +1,16 @@
 import "../Pagination/Pagination.scss";
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { getFull250, cleanFull250 } from "../../redux/actions/actions";
-import { setPage } from "../../redux/actions/actions";
+import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
 
 function Pagination250() {
-  const dispatch = useDispatch();
-
   const movies = useSelector((state) => {
     return state.movie.moviesFullList250;
   });
-  const page = useSelector((state) => {
-    return state.movie.pageForPagination;
-  });
 
-  const getMore = () => {
-    dispatch(setPage());
-  };
-
-  useEffect(() => {
-    dispatch(getFull250(1));
-    dispatch(getFull250(2));
-    dispatch(getFull250(3));
-  }, []);
-
-  useEffect(() => {
-    dispatch(getFull250(page));
-  }, [page]);
+  // const getMore = () => {
+  //   dispatch(setPage());
+  // };
 
   return (
     <div className="pagination">

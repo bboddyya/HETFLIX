@@ -32,7 +32,7 @@ export const movieReducer = (state = initialState, action) => {
       return {
         ...state,
         movies250: {
-          movieList: [...movies250.movieList, ...action.data250],
+          movieList: [...action.data250],
           isLoading: false,
         },
       };
