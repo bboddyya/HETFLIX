@@ -7,9 +7,6 @@ import {
   GET_AWAIT_ISLOADING,
   GET_MOVIE_BY_ID,
   GET_MOVIE_BY_ID_ISLOADING,
-  SET_PAGE,
-  GET_250_MOVIES_FULL_LIST,
-  CLEAR_250_LIST,
 } from "../types/types";
 
 const initialState = {
@@ -43,17 +40,6 @@ export const movieReducer = (state = initialState, action) => {
         movies250: { ...movies250, isLoading: true },
       };
 
-    // case GET_250_MOVIES_FULL_LIST:
-    //   return {
-    //     ...state,
-    //     moviesFullList250: [state.moviesFullList250].concat(action.dataFull250),
-    //   };
-
-    case CLEAR_250_LIST:
-      return {
-        ...state,
-        moviesFullList250: [],
-      };
     case GET_100_MOVIES:
       return {
         ...state,
@@ -79,7 +65,6 @@ export const movieReducer = (state = initialState, action) => {
           movieList: [...action.dataAwait],
           isLoading: false,
         },
-        //
       };
 
     case GET_AWAIT_ISLOADING:
@@ -99,12 +84,6 @@ export const movieReducer = (state = initialState, action) => {
       return {
         ...state,
         movieById: { ...movieById, isLoading: true },
-      };
-
-    case SET_PAGE:
-      return {
-        ...state,
-        pageForPagination: state.pageForPagination + 1,
       };
 
     default:

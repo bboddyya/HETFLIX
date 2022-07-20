@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import MainPageContainer from "./Containers/MainPageContainer";
 import PaginationContainer from "./Containers/PaginationContainer";
-import SingleMovie from "./Components/Movie/Single Movie/SingleMovie";
+import SingleMovie from "./Components/Single Movie/SingleMovie";
 function App() {
   return (
     <BrowserRouter>

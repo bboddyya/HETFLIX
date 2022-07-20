@@ -3,7 +3,7 @@ import Movie from "../Movie/Movie";
 import { ClipLoader } from "react-spinners";
 import { useSelector } from "react-redux";
 import { Routes, Route, Switch } from "react-router-dom";
-import SingleMovie from "../Movie/Single Movie/SingleMovie";
+import SingleMovie from "../Single Movie/SingleMovie";
 
 function MainPage() {
   const films250Ready = useSelector((state) => state.movie.movies250.isLoading);
