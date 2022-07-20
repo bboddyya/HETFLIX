@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPageContainer />} />
-        <Route path="/films" element={<PaginationContainer />} />
+        <Route path="/films/:type" element={<PaginationContainer />} />
         <Route path="/film/:id" element={<SingleMovie />} />
       </Routes>
     </BrowserRouter>

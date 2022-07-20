@@ -4,16 +4,19 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { configuration } from "../../utils/configurationForApi";
 import { getRatingColor } from "../../utils/getColor";
+import { Link, useParams } from "react-router-dom";
 
 function Pagination() {
   const [page, setPage] = useState(2);
   const [filmsList, setFilmsList] = useState([]);
   const [isLoading, setIsloading] = useState(false);
 
+  const { type } = useParams();
+
   useEffect(() => {
     async function fetchFilms(page = 1) {
       const response = await fetch(
-        `https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_250_BEST_FILMS&page=${page}`,
+        `https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=${type}&page=${page}`,
         configuration
       );
       const data = await response.json();
@@ -28,7 +31,7 @@ function Pagination() {
       async function fetchFilms() {
         try {
           const response = await fetch(
-            `https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_250_BEST_FILMS&page=${page}`,
+            `https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=${type}&page=${page}`,
             configuration
           );
           const data = await response.json();
@@ -72,15 +75,18 @@ function Pagination() {
             key={el.filmId}
             className="pagination__film"
           >
-            <div className="poster">
-              <img src={el.posterUrlPreview} />
-              <div
-                className="movie__rating"
-                style={{ backgroundColor: `${getRatingColor(el.rating)}` }}
-              >
-                {el.rating}
+            <Link to={`/film/${el.filmId}`}>
+              <div className="poster">
+                <img src={el.posterUrlPreview} />
+                <div
+                  className="movie__rating"
+                  style={{ backgroundColor: `${getRatingColor(el.rating)}` }}
+                >
+                  {el.rating}
+                </div>
               </div>
-            </div>
+            </Link>
+
             <div className="title">{el.nameRu}</div>
           </motion.div>
         );
