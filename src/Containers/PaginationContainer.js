@@ -1,4 +1,4 @@
-import Pagination250 from "../Components/Pagination/Pagination250";
+import Pagination from "../Components/Pagination/Pagination";
 import { getFull250 } from "../redux/actions/actions";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -19,7 +19,7 @@ function PaginationContainer() {
     dispatch(getFull250(page));
   }, [page]);
 
-  return <Pagination250 />;
+  return <Pagination />;
 }
 
 export default PaginationContainer;
