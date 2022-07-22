@@ -7,6 +7,8 @@ import {
   GET_AWAIT_ISLOADING,
   GET_MOVIE_BY_ID,
   GET_MOVIE_BY_ID_ISLOADING,
+  GET_BOX_OFFICE,
+  GET_DIRECTOR,
 } from "../types/types";
 
 const initialState = {
@@ -81,6 +83,18 @@ export const movieReducer = (state = initialState, action) => {
       };
 
     case GET_MOVIE_BY_ID_ISLOADING:
+      return {
+        ...state,
+        movieById: { ...movieById, isLoading: true },
+      };
+
+    case GET_BOX_OFFICE:
+      return {
+        ...state,
+        movieById: { ...movieById, isLoading: true },
+      };
+
+    case GET_DIRECTOR:
       return {
         ...state,
         movieById: { ...movieById, isLoading: true },

@@ -28,6 +28,12 @@ async function fetchFilms() {
 
 
 
-
-
+https://kinopoiskapiunofficial.tech/api/v1/staff?filmId=${id} - режиссеры и актеры 
+https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}/box_office - сборы бюджет 
 https://kinopoiskapiunofficial.tech/api/v2.2/films/${id} - фильм по id 
+
+
+setInterval(()=>{
+  console.log("я сраркус")
+},1)
+

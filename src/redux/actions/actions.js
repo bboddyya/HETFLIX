@@ -7,6 +7,8 @@ import {
   GET_AWAIT_ISLOADING,
   GET_MOVIE_BY_ID,
   GET_MOVIE_BY_ID_ISLOADING,
+  GET_BOX_OFFICE,
+  GET_DIRECTOR,
 } from "../types/types";
 import { configuration } from "../../api/configurationForApi";
 
