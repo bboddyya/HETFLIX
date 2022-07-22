@@ -8,7 +8,7 @@ import {
   GET_MOVIE_BY_ID,
   GET_MOVIE_BY_ID_ISLOADING,
 } from "../types/types";
-import { configuration } from "../../utils/configurationForApi";
+import { configuration } from "../../api/configurationForApi";
 
 export function getTop250(page) {
   return async (dispatch) => {

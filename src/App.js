@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<MainPageContainer />} />
+        <Route path="*" element={<MainPageContainer />} />
         <Route path="/films/:type" element={<PaginationContainer />} />
         <Route path="/film/:id" element={<SingleMovie />} />
       </Routes>

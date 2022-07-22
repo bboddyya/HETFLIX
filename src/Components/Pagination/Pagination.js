@@ -1,8 +1,7 @@
 import "../Pagination/Pagination.scss";
-// import { useSelector,useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { configuration } from "../../utils/configurationForApi";
+import { configuration } from "../../api/configurationForApi";
 import { getRatingColor } from "../../utils/getColor";
 import { Link, useParams } from "react-router-dom";
 
@@ -10,39 +9,29 @@ function Pagination() {
   const [page, setPage] = useState(2);
   const [filmsList, setFilmsList] = useState([]);
   const [isLoading, setIsloading] = useState(false);
-
   const { type } = useParams();
 
+  async function fetchFilms(t, p) {
+    const response = await fetch(
+      `https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=${t}&page=${p}`,
+      configuration
+    );
+    const data = await response.json();
+    const { films } = await data;
+    setFilmsList([...filmsList, ...films]);
+  }
+
   useEffect(() => {
-    async function fetchFilms(page = 1) {
-      const response = await fetch(
-        `https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=${type}&page=${page}`,
-        configuration
-      );
-      const data = await response.json();
-      const { films } = await data;
-      setFilmsList([...filmsList, ...films]);
-    }
-    fetchFilms();
+    fetchFilms(type, 1);
   }, []);
 
   useEffect(() => {
     if (isLoading) {
-      async function fetchFilms() {
-        try {
-          const response = await fetch(
-            `https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=${type}&page=${page}`,
-            configuration
-          );
-          const data = await response.json();
-          const { films } = await data;
-          setFilmsList([...filmsList, ...films]);
-          setPage((current) => current + 1);
-        } finally {
-          setIsloading(false);
-        }
-      }
-      fetchFilms();
+      (async () => {
+        await fetchFilms(type, page);
+        setPage((current) => current + 1);
+        setIsloading(false);
+      })();
     }
   }, [isLoading]);
 
@@ -57,12 +46,13 @@ function Pagination() {
     if (
       e.target.documentElement.scrollHeight -
         (e.target.documentElement.scrollTop + window.innerHeight) <
-      100
+      50
     ) {
       setIsloading(true);
     }
   };
 
+  console.log(page);
   return (
     <div className="pagination">
       {filmsList.map((el) => {
