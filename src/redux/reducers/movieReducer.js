@@ -9,6 +9,8 @@ import {
   GET_MOVIE_BY_ID_ISLOADING,
   GET_BOX_OFFICE,
   GET_DIRECTOR,
+  GET_DIRECTOR_ISLOADING,
+  GET_BOX_OFFICE_ISLOADING,
 } from "../types/types";
 
 const initialState = {
@@ -16,6 +18,8 @@ const initialState = {
   movies100: { movieList: [], isLoading: false },
   moviesAwait: { movieList: [], isLoading: false },
   movieById: { movie: [], isLoading: false },
+  directorData: { persons: [], isLoading: false },
+  boxOfficeData: { boxOffice: [], isLoading: false },
   moviesFullList250: [],
   pageForPagination: 4,
 };
@@ -89,12 +93,26 @@ export const movieReducer = (state = initialState, action) => {
       };
 
     case GET_BOX_OFFICE:
+      const { boxOfficeData } = state;
       return {
         ...state,
-        movieById: { ...movieById, isLoading: true },
+        boxOfficeData: { ...boxOfficeData, boxOffice: action.dataBoxOffice },
+      };
+
+    case GET_BOX_OFFICE_ISLOADING:
+      return {
+        ...state,
+        boxOfficeData: { ...boxOfficeData, isLoading: true },
       };
 
     case GET_DIRECTOR:
+      const { directorData } = state;
+      return {
+        ...state,
+        directorData: { ...directorData, persons: [...personsList] },
+      };
+
+    case GET_MOVIE_BY_ID_ISLOADING:
       return {
         ...state,
         movieById: { ...movieById, isLoading: true },
