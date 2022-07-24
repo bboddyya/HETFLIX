@@ -8,8 +8,8 @@ import {
   GET_MOVIE_BY_ID,
   GET_MOVIE_BY_ID_ISLOADING,
   GET_BOX_OFFICE,
-  GET_DIRECTOR,
-  GET_DIRECTOR_ISLOADING,
+  GET_STAFF,
+  GET_STAFF_ISLOADING,
   GET_BOX_OFFICE_ISLOADING,
 } from "../types/types";
 
@@ -18,10 +18,8 @@ const initialState = {
   movies100: { movieList: [], isLoading: false },
   moviesAwait: { movieList: [], isLoading: false },
   movieById: { movie: [], isLoading: false },
-  directorData: { persons: [], isLoading: false },
+  staffData: { persons: [], isLoading: false },
   boxOfficeData: { boxOffice: [], isLoading: false },
-  moviesFullList250: [],
-  pageForPagination: 4,
 };
 
 export const movieReducer = (state = initialState, action) => {
@@ -29,6 +27,8 @@ export const movieReducer = (state = initialState, action) => {
   const { movies100 } = state;
   const { moviesAwait } = state;
   const { movieById } = state;
+  const { boxOfficeData } = state;
+  const { staffData } = state;
 
   switch (action.type) {
     case GET_250_MOVIES:
@@ -93,10 +93,13 @@ export const movieReducer = (state = initialState, action) => {
       };
 
     case GET_BOX_OFFICE:
-      const { boxOfficeData } = state;
       return {
         ...state,
-        boxOfficeData: { ...boxOfficeData, boxOffice: action.dataBoxOffice },
+        boxOfficeData: {
+          ...boxOfficeData,
+          boxOffice: action.dataBoxOffice,
+          isLoading: false,
+        },
       };
 
     case GET_BOX_OFFICE_ISLOADING:
@@ -105,17 +108,21 @@ export const movieReducer = (state = initialState, action) => {
         boxOfficeData: { ...boxOfficeData, isLoading: true },
       };
 
-    case GET_DIRECTOR:
-      const { directorData } = state;
+    case GET_STAFF:
       return {
         ...state,
-        directorData: { ...directorData, persons: [...personsList] },
+
+        directorData: {
+          ...staffData,
+          persons: action.staffList,
+          isLoading: false,
+        },
       };
 
-    case GET_MOVIE_BY_ID_ISLOADING:
+    case GET_STAFF_ISLOADING:
       return {
         ...state,
-        movieById: { ...movieById, isLoading: true },
+        staffData: { ...staffData, isLoading: true },
       };
 
     default:

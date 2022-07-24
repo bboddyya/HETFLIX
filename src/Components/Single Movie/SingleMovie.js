@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getById } from "../../redux/actions/actions";
+import { getById, getStaff, getBoxOffice } from "../../redux/actions/actions";
 import "./SingleMovie.scss";
 
 function SingleMovie() {
@@ -9,6 +9,8 @@ function SingleMovie() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getById(id));
+    dispatch(getStaff(id));
+    dispatch(getBoxOffice(id));
   }, []);
 
   const movie = useSelector((state) => state.movie.movieById.movie);
@@ -25,15 +27,19 @@ function SingleMovie() {
         <div className="single-movie__header-info">
           <div className="single-movie__title-rating">
             <div className="single-movie__title">
-              <div className="single-movie__title-ru"></div>
-              <div className="single-movie__title-en"></div>
+              <h1 className="single-movie__title-ru">{`${movie.nameRu} (${movie.year})`}</h1>
+              <h6 className="single-movie__title-en">{movie.nameOriginal}</h6>
             </div>
             <div className="single-movie__rating">
-              <div className="single-movie__rating-default"></div>
-              <div className="single-movie__rating-user"></div>
+              <div className="single-movie__rating-default">
+                {movie.ratingKinopoisk}
+              </div>
+              <div className="single-movie__rating-user">7.3</div>
             </div>
           </div>
-          <div className="single-movie__short-discription"></div>
+          <div className="single-movie__short-discription">
+            {movie.shortDescription ?? movie.slogan}
+          </div>
         </div>
       </div>
       <div className="single-movie__about">
