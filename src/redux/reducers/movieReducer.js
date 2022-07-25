@@ -18,7 +18,12 @@ const initialState = {
   movies100: { movieList: [], isLoading: false },
   moviesAwait: { movieList: [], isLoading: false },
   movieById: { movie: [], isLoading: false },
-  staffData: { persons: [], isLoading: false },
+  staffData: {
+    director: [],
+    actors: [],
+    operator: [],
+    isLoading: false,
+  },
   boxOfficeData: { boxOffice: [], isLoading: false },
 };
 
@@ -109,12 +114,18 @@ export const movieReducer = (state = initialState, action) => {
       };
 
     case GET_STAFF:
+      const { director } = action;
+      const { actors } = action;
+      const { operator } = action;
+
       return {
         ...state,
 
-        directorData: {
+        staffData: {
           ...staffData,
-          persons: action.staffList,
+          director: director,
+          actors: actors,
+          operator: operator,
           isLoading: false,
         },
       };

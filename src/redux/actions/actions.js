@@ -96,9 +96,10 @@ export function getBoxOffice(id) {
       configuration
     );
     const { items } = await response.json();
+    const budget = items.filter((el) => el.type === "BUDGET");
     dispatch({
       type: GET_BOX_OFFICE,
-      dataBoxOffice: items,
+      dataBoxOffice: budget,
     });
   };
 }
@@ -113,9 +114,15 @@ export function getStaff(id) {
       configuration
     );
     const data = await response.json();
+    const director = data.filter((el) => el.professionKey === "DIRECTOR");
+    const actors = data.filter((el) => el.professionKey === "ACTOR");
+    const operator = data.filter((el) => el.professionKey === "OPERATOR");
+
     dispatch({
       type: GET_STAFF,
-      staffList: data,
+      director,
+      actors,
+      operator,
     });
   };
 }
