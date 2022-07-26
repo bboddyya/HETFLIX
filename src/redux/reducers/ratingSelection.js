@@ -8,9 +8,10 @@ export const ratingSelection = (state = initialState, action) => {
   switch (action.type) {
     case SET_RATING:
       const { value } = action;
+      const { film } = state;
       return {
         ...state,
-        rating: value,
+        film: { ...film, rating: value },
       };
 
     default:

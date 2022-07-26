@@ -1,9 +1,12 @@
 import { FaStar } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setRating } from "../../../redux/actions/actions";
 export function RatingSelection() {
   const dispatch = useDispatch();
   const handleRating = (ratingValue) => dispatch(setRating(ratingValue));
+  const rating = useSelector((state) => state.ratingSelection.film.rating);
+  console.log(rating);
+
   return (
     <div className="rating-selection">
       {[...Array(10)].map((star, index) => {
@@ -16,7 +19,11 @@ export function RatingSelection() {
               value={ratingValue}
               onClick={() => handleRating(ratingValue)}
             />
-            <FaStar size={35} className="star" />
+            <FaStar
+              size={35}
+              className="star"
+              color={ratingValue <= rating ? "gold" : "grey"}
+            />
           </label>
         );
       })}

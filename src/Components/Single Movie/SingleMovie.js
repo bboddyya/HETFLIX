@@ -21,7 +21,6 @@ function SingleMovie() {
   const operator = useSelector((state) => state.movie.staffData.operator);
   const boxOffice = useSelector((state) => state.movie.boxOfficeData.boxOffice);
   const ratingValue = useSelector((state) => state.ratingSelection.film.rating);
-  console.log(ratingValue);
 
   return (
     <div className="single-movie">
