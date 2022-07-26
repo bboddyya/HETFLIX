@@ -11,6 +11,7 @@ import {
   GET_STAFF,
   GET_STAFF_ISLOADING,
   GET_BOX_OFFICE_ISLOADING,
+  SET_RATING,
 } from "../types/types";
 import { configuration } from "../../api/configurationForApi";
 
@@ -124,5 +125,12 @@ export function getStaff(id) {
       actors,
       operator,
     });
+  };
+}
+
+export function setRating(value) {
+  return {
+    type: SET_RATING,
+    value,
   };
 }

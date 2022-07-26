@@ -7,6 +7,11 @@ const initialState = {
 export const ratingSelection = (state = initialState, action) => {
   switch (action.type) {
     case SET_RATING:
+      const { value } = action;
+      return {
+        ...state,
+        rating: value,
+      };
 
     default:
       return state;

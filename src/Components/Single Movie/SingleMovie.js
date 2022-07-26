@@ -20,6 +20,8 @@ function SingleMovie() {
   const actors = useSelector((state) => state.movie.staffData.actors);
   const operator = useSelector((state) => state.movie.staffData.operator);
   const boxOffice = useSelector((state) => state.movie.boxOfficeData.boxOffice);
+  const ratingValue = useSelector((state) => state.ratingSelection.film.rating);
+  console.log(ratingValue);
 
   return (
     <div className="single-movie">
@@ -44,7 +46,7 @@ function SingleMovie() {
               <div className="single-movie__rating-default">
                 {movie.ratingKinopoisk}
               </div>
-              <div className="single-movie__rating-user">7.3</div>
+              <div className="single-movie__rating-user">{ratingValue}</div>
             </div>
           </div>
           <div className="single-movie__short-discription">
