@@ -10,3 +10,5 @@ export const GET_BOX_OFFICE = "GET_BOX_OFFICE";
 export const GET_STAFF = "GET_STAFF";
 export const GET_STAFF_ISLOADING = "GET_STAFF_ISLOADING";
 export const GET_BOX_OFFICE_ISLOADING = "GET_BOX_OFFICE_ISLOADING";
+export const SET_RATING = "SET_RATING";
+export const SET_HOVER = "SET_HOVER";

@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getById, getStaff, getBoxOffice } from "../../redux/actions/actions";
 import { MdOutlineBookmarkBorder, MdOutlineBookmark } from "react-icons/md";
+import { getTime } from "../../utils/getTime";
 import "./SingleMovie.scss";
-
+import RatingSelection from "./RatingSelection.js/RatingSelection";
 function SingleMovie() {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -19,8 +20,6 @@ function SingleMovie() {
   const actors = useSelector((state) => state.movie.staffData.actors);
   const operator = useSelector((state) => state.movie.staffData.operator);
   const boxOffice = useSelector((state) => state.movie.boxOfficeData.boxOffice);
-
-  console.log("boxOffice", boxOffice);
 
   return (
     <div className="single-movie">
@@ -71,15 +70,25 @@ function SingleMovie() {
         </div>
         <div className="about__block">
           <div className="about__title">Страна:</div>
-          {movie.countries.map((el) => {
-            return <div className="about__link">{el.country}</div>;
-          })}
+          <div className="about__link">
+            {movie.countries?.map((el, index, arr) => {
+              if (index !== arr.length - 1) {
+                return <span>{`${el.country}, `}</span>;
+              }
+              return <span>{el.country}</span>;
+            })}
+          </div>
         </div>
         <div className="about__block">
           <div className="about__title">Жанр:</div>
-          {movie.genres.map((el) => {
-            return <div className="about__link">{el.genre}</div>;
-          })}
+          <div className="about__link">
+            {movie.genres?.map((el, index, arr) => {
+              if (index !== arr.length - 1) {
+                return <span>{`${el.genre}, `}</span>;
+              }
+              return <span>{el.genre}</span>;
+            })}
+          </div>
         </div>
         <div className="about__block">
           <div className="about__title">Бюджет:</div>
@@ -92,13 +101,15 @@ function SingleMovie() {
           })}
         </div>
         <div className="about__block">
-          <div className="about__title">Время:</div>
-          <div className="about__link"></div>
+          <div className="about__title">Время: </div>
+          <div className="about__link">{getTime(movie?.filmLength)}</div>
         </div>
-        <div className="single-movie__discription"></div>
-        <div className="single-movie__rating-selection"></div>
-        <div className="single-movie__same-films"></div>
       </div>
+
+      <div className="single-movie__rating-selection">
+        <RatingSelection />
+      </div>
+      <div className="single-movie__same-films"></div>
     </div>
   );
 }
