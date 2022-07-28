@@ -52,7 +52,6 @@ function Pagination() {
     }
   };
 
-  console.log(page);
   return (
     <div className="pagination">
       {filmsList.map((el) => {

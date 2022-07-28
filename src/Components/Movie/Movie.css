@@ -80,7 +80,7 @@ a {
 }
 
 .movie__spinner {
-  position: absolute;
+  position: fixed;
   top: 45%;
   right: 45%;
   z-index: 15;

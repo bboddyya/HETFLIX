@@ -33,12 +33,16 @@ function FilmsSlider(props) {
             >
               <Link to={`/film/${el.filmId}`}>
                 <div className="movie__picture">
-                  <div
-                    className="movie__rating"
-                    style={{ backgroundColor: `${getRatingColor(el.rating)}` }}
-                  >
-                    {el.rating}
-                  </div>
+                  {el.rating && (
+                    <div
+                      className="movie__rating"
+                      style={{
+                        backgroundColor: `${getRatingColor(el.rating)}`,
+                      }}
+                    >
+                      {el.rating}
+                    </div>
+                  )}
 
                   <motion.img
                     src={el.posterUrlPreview}

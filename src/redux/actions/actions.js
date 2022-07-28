@@ -12,6 +12,8 @@ import {
   GET_STAFF_ISLOADING,
   GET_BOX_OFFICE_ISLOADING,
   SET_RATING,
+  GET_SIMILARS,
+  GET_SIMILARS_ISLOADING,
 } from "../types/types";
 import { configuration } from "../../api/configurationForApi";
 
@@ -64,6 +66,23 @@ export function getTopAwait(page) {
     dispatch({
       type: GET_AWAIT_MOVIES,
       dataAwait: films,
+    });
+  };
+}
+
+export function getSimilars(id) {
+  return async (dispatch) => {
+    dispatch({
+      type: GET_SIMILARS_ISLOADING,
+    });
+    const response = await fetch(
+      `https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}/similars`,
+      configuration
+    );
+    const { items } = await response.json();
+    dispatch({
+      type: GET_SIMILARS,
+      similar: items,
     });
   };
 }

@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { setRating } from "../../../redux/actions/actions";
+import "./RatingSelection.scss";
+
 export function RatingSelection() {
+  const [hover, setHover] = useState(null);
+
   const dispatch = useDispatch();
   const handleRating = (ratingValue) => dispatch(setRating(ratingValue));
   const rating = useSelector((state) => state.ratingSelection.film.rating);
-  console.log(rating);
 
   return (
     <div className="rating-selection">
@@ -20,10 +24,13 @@ export function RatingSelection() {
               onClick={() => handleRating(ratingValue)}
             />
             <FaStar
-              size={35}
-              className="star"
-              color={ratingValue <= rating ? "gold" : "grey"}
+              size={50}
+              className="rating-selection__star"
+              onMouseEnter={() => setHover(ratingValue)}
+              onMouseLeave={() => setHover(null)}
+              color={ratingValue <= (hover || rating) ? "white" : "grey"}
             />
+            <div className="rating-selection__number">{index + 1}</div>
           </label>
         );
       })}

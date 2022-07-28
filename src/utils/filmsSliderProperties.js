@@ -5,4 +5,5 @@ export const filmSLiderProperties = {
     title: "100 ПОПУЛЯРНЫХ ФИЛЬМОВ",
   },
   topAwait: { url: "/films/TOP_AWAIT_FILMS", title: "ТОП ОЖИДАЕМЫХ ФИЛЬМОВ" },
+  moviesSimilar: { url: "/", title: "ПОХОЖИЕ ФИЛЬМЫ" },
 };

@@ -5,6 +5,7 @@ import Header from "./Components/Header/Header";
 import MainPageContainer from "./Containers/MainPageContainer";
 import PaginationContainer from "./Containers/PaginationContainer";
 import SingleMovie from "./Components/Single Movie/SingleMovie";
+import UpArrow from "./Components/UpArrow.js/UpArrow";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/films/:type" element={<PaginationContainer />} />
         <Route path="/film/:id" element={<SingleMovie />} />
       </Routes>
+      <UpArrow />
     </BrowserRouter>
   );
 }

@@ -11,6 +11,8 @@ import {
   GET_STAFF,
   GET_STAFF_ISLOADING,
   GET_BOX_OFFICE_ISLOADING,
+  GET_SIMILARS,
+  GET_SIMILARS_ISLOADING,
 } from "../types/types";
 
 const initialState = {
@@ -25,6 +27,7 @@ const initialState = {
     isLoading: false,
   },
   boxOfficeData: { boxOffice: [], isLoading: false },
+  moviesSimilar: { movieList: [], isLoading: false },
 };
 
 export const movieReducer = (state = initialState, action) => {
@@ -34,6 +37,7 @@ export const movieReducer = (state = initialState, action) => {
   const { movieById } = state;
   const { boxOfficeData } = state;
   const { staffData } = state;
+  const { moviesSimilar } = state;
 
   switch (action.type) {
     case GET_250_MOVIES:
@@ -134,6 +138,22 @@ export const movieReducer = (state = initialState, action) => {
       return {
         ...state,
         staffData: { ...staffData, isLoading: true },
+      };
+
+    case GET_SIMILARS:
+      return {
+        ...state,
+        moviesSimilar: {
+          ...moviesSimilar,
+          movieList: action.similar,
+          isLoading: false,
+        },
+      };
+
+    case GET_SIMILARS_ISLOADING:
+      return {
+        ...state,
+        moviesSimilar: { ...moviesSimilar, isLoading: true },
       };
 
     default:
