@@ -1,7 +1,7 @@
-import { SET_RATING, SET_HOVER } from "../types/types";
+import { SET_RATING } from "../types/types";
 
 const initialState = {
-  film: { id: null, rating: null, hover: null },
+  film: { id: null, rating: null },
 };
 
 export const ratingSelection = (state = initialState, action) => {

@@ -9,6 +9,7 @@ function Pagination() {
   const [page, setPage] = useState(2);
   const [filmsList, setFilmsList] = useState([]);
   const [isLoading, setIsloading] = useState(false);
+  const [debug, setDebug] = useState(false);
   const { type } = useParams();
 
   async function fetchFilms(t, p) {
@@ -21,8 +22,22 @@ function Pagination() {
     setFilmsList([...filmsList, ...films]);
   }
 
+  const scrollHandler = (e) => {
+    if (
+      e.target.documentElement.scrollHeight -
+        (e.target.documentElement.scrollTop + window.innerHeight) <
+        500 &&
+      debug
+    ) {
+      setIsloading(true);
+    }
+  };
+
   useEffect(() => {
-    fetchFilms(type, 1);
+    (async () => {
+      await fetchFilms(type, 1);
+      setDebug(true);
+    })();
   }, []);
 
   useEffect(() => {
@@ -41,16 +56,6 @@ function Pagination() {
       document.removeEventListener("scroll", scrollHandler);
     };
   });
-
-  const scrollHandler = (e) => {
-    if (
-      e.target.documentElement.scrollHeight -
-        (e.target.documentElement.scrollTop + window.innerHeight) <
-      50
-    ) {
-      setIsloading(true);
-    }
-  };
 
   return (
     <div className="pagination">

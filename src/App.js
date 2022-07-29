@@ -6,15 +6,19 @@ import MainPageContainer from "./Containers/MainPageContainer";
 import PaginationContainer from "./Containers/PaginationContainer";
 import SingleMovie from "./Components/Single Movie/SingleMovie";
 import UpArrow from "./Components/UpArrow.js/UpArrow";
+import ScrollToTop from "./utils/ScrollToTop";
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route path="*" element={<MainPageContainer />} />
-        <Route path="/films/:type" element={<PaginationContainer />} />
-        <Route path="/film/:id" element={<SingleMovie />} />
-      </Routes>
+      <ScrollToTop>
+        <Routes>
+          <Route path="*" element={<MainPageContainer />} />
+          <Route path="/films/:type" element={<PaginationContainer />} />
+          <Route path="/film/:id" element={<SingleMovie />} />
+        </Routes>
+      </ScrollToTop>
+
       <UpArrow />
     </BrowserRouter>
   );

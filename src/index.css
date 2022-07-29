@@ -25,6 +25,31 @@ body {
     hsl(359deg 50% 25%) 94%,
     hsl(0deg 53% 26%) 100%
   );
+  /* background-image: linear-gradient(
+    180deg,
+    hsl(0deg 69% 50%) 0%,
+    hsl(0deg 67% 51%) 2%,
+    hsl(0deg 64% 52%) 4%,
+    hsl(0deg 61% 53%) 6%,
+    hsl(0deg 58% 54%) 8%,
+    hsl(0deg 55% 55%) 10%,
+    hsl(0deg 52% 56%) 13%,
+    hsl(0deg 49% 57%) 16%,
+    hsl(0deg 46% 57%) 20%,
+    hsl(0deg 42% 58%) 24%,
+    hsl(0deg 39% 59%) 28%,
+    hsl(0deg 35% 59%) 33%,
+    hsl(0deg 32% 60%) 39%,
+    hsl(0deg 28% 61%) 46%,
+    hsl(0deg 25% 61%) 54%,
+    hsl(0deg 21% 62%) 63%,
+    hsl(0deg 18% 62%) 72%,
+    hsl(0deg 14% 63%) 80%,
+    hsl(0deg 11% 63%) 87%,
+    hsl(0deg 7% 63%) 93%,
+    hsl(0deg 3% 64%) 97%,
+    hsl(0deg 0% 64%) 100%
+  ); */
   overflow-x: hidden;
 }
 

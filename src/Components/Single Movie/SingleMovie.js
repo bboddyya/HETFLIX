@@ -126,10 +126,12 @@ function SingleMovie() {
               );
             })}
           </div>
-          <div className="about__block">
-            <div className="about__title">Время: </div>
-            <div className="about__link">{getTime(movie?.filmLength)}</div>
-          </div>
+          {movie.filmLength && (
+            <div className="about__block">
+              <div className="about__title">Время: </div>
+              <div className="about__link">{getTime(movie?.filmLength)}</div>
+            </div>
+          )}
         </div>
         <Element name="test1" className="element">
           <div className="single-movie__rating-selection">
