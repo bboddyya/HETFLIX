@@ -24,7 +24,7 @@ export function RatingSelection() {
               onClick={() => handleRating(ratingValue)}
             />
             <FaStar
-              size={50}
+              size={40}
               className="rating-selection__star"
               onMouseEnter={() => setHover(ratingValue)}
               onMouseLeave={() => setHover(null)}

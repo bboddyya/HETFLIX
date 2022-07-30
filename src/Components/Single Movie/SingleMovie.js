@@ -14,6 +14,7 @@ import RatingSelection from "./RatingSelection.js/RatingSelection";
 import { filmSLiderProperties } from "../../utils/filmsSliderProperties";
 import FilmsSlider from "../Movie/FilmsSpinner/FilmsSlider";
 import { Link, Element } from "react-scroll";
+import Reviews from "./Reviews/Reviews";
 
 function SingleMovie() {
   const { id } = useParams();
@@ -63,9 +64,8 @@ function SingleMovie() {
                 <Link
                   className="single-movie__rating-user"
                   to="test1"
-                  spy={true}
                   smooth={true}
-                  offset={50}
+                  offset={-100}
                   duration={300}
                 >
                   {!ratingValue ? "Оцените фильм" : ratingValue}
@@ -146,10 +146,11 @@ function SingleMovie() {
           filmSLiderProperties={{ ...filmSLiderProperties.moviesSimilar }}
         />
       </div>
+      <div className="single-movie__reviews">
+        <Reviews />
+      </div>
     </div>
   );
 }
 
 export default SingleMovie;
-
-//todo: переделать map с запятыми и span
