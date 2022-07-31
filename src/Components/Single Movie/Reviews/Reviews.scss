@@ -1,3 +1,7 @@
+$colorInput: rgb(255 255 255 / 66%);
+$colorInputFocus: rgba(255, 255, 255, 0.838);
+$placeholderColor: rgba(134, 134, 134, 0.6);
+
 .reviews__wrapper {
   display: flex;
   align-items: center;
@@ -14,6 +18,10 @@
     padding: 20px 30px;
     font-family: "Oswald";
 
+    h1 {
+      color: $colorInput;
+    }
+
     input {
       height: 30px;
       font-size: 23px;
@@ -24,23 +32,23 @@
       padding: 5px;
       margin-bottom: 10px;
       font-family: "Oswald";
-      background-color: rgb(149, 149, 149);
+      background-color: $colorInput;
       transition: all 0.3s ease;
     }
 
     input::placeholder {
-      color: rgb(47, 47, 47);
+      color: $placeholderColor;
     }
     input:focus {
-      background-color: rgb(189, 189, 189);
+      background-color: $colorInputFocus;
     }
 
     textarea::placeholder {
-      color: rgb(47, 47, 47);
+      color: $placeholderColor;
     }
 
     textarea:focus {
-      background-color: rgb(189, 189, 189);
+      background-color: $colorInputFocus;
     }
     textarea {
       font-size: 23px;
@@ -52,7 +60,7 @@
       resize: none;
       border-radius: 5px;
       height: 400px;
-      background-color: rgb(149, 149, 149);
+      background-color: $colorInput;
       transition: all 0.3s ease;
 
       &:active {
@@ -85,7 +93,7 @@
     padding: 20px 30px;
 
     .reviews-list__element {
-      background-color: grey;
+      background-color: $colorInput;
       padding: 20px;
       border-radius: 10px;
 
