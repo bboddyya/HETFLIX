@@ -147,9 +147,10 @@ export function getStaff(id) {
   };
 }
 
-export function setRating(value) {
+export function setRating(rating, filmId) {
   return {
     type: SET_RATING,
-    value,
+    rating,
+    filmId,
   };
 }

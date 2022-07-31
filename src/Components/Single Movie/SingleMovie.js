@@ -31,10 +31,12 @@ function SingleMovie() {
     (state) => state.movie.moviesSimilar.movieList
   );
   const director = useSelector((state) => state.movie.staffData.director);
-
   const boxOffice = useSelector((state) => state.movie.boxOfficeData.boxOffice);
-  const ratingValue = useSelector((state) => state.ratingSelection.film.rating);
+  const ratingValue = useSelector((state) =>
+    state.ratingSelection.film.filter((el) => el.id === id)
+  );
 
+  console.log("rating value->", ...ratingValue);
   return (
     <div className=".single-movie__wrapper ">
       <div className="single-movie">
@@ -68,7 +70,7 @@ function SingleMovie() {
                   offset={-100}
                   duration={300}
                 >
-                  {!ratingValue ? "Оцените фильм" : ratingValue}
+                  {ratingValue.length ? ratingValue[0].rating : "Оцените фильм"}
                 </Link>
               </div>
             </div>
@@ -136,7 +138,7 @@ function SingleMovie() {
         <Element name="test1" className="element">
           <div className="single-movie__rating-selection">
             <h2>Оцените фильм</h2>
-            <RatingSelection />
+            <RatingSelection id={id} />
           </div>
         </Element>
       </div>

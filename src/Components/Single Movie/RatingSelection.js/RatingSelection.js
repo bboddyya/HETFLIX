@@ -4,13 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { setRating } from "../../../redux/actions/actions";
 import "./RatingSelection.scss";
 
-export function RatingSelection() {
+export function RatingSelection(props) {
   const [hover, setHover] = useState(null);
 
   const dispatch = useDispatch();
-  const handleRating = (ratingValue) => dispatch(setRating(ratingValue));
   const rating = useSelector((state) => state.ratingSelection.film.rating);
-
+  const handleRating = (ratingValue) => dispatch(setRating(ratingValue, id));
+  const id = props.id;
+  console.log(id);
   return (
     <div className="rating-selection">
       {[...Array(10)].map((star, index) => {
@@ -21,7 +22,7 @@ export function RatingSelection() {
               type="radio"
               name="rating"
               value={ratingValue}
-              onClick={() => handleRating(ratingValue)}
+              onClick={() => handleRating(ratingValue, id)}
             />
             <FaStar
               size={40}
