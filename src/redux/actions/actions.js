@@ -14,6 +14,7 @@ import {
   SET_RATING,
   GET_SIMILARS,
   GET_SIMILARS_ISLOADING,
+  SET_REVIEW,
 } from "../types/types";
 import { configuration } from "../../api/configurationForApi";
 
@@ -152,5 +153,18 @@ export function setRating(rating, filmId) {
     type: SET_RATING,
     rating,
     filmId,
+  };
+}
+
+export function setRreview(id, name, date, title, text) {
+  return {
+    type: SET_REVIEW,
+    review: {
+      id,
+      name,
+      date,
+      title,
+      text,
+    },
   };
 }

@@ -1,7 +1,8 @@
-import { SET_RATING } from "../types/types";
+import { SET_RATING, SET_REVIEW } from "../types/types";
 
 const initialState = {
   film: [],
+  reviews: [],
 };
 
 export const ratingSelection = (state = initialState, action) => {
@@ -25,6 +26,15 @@ export const ratingSelection = (state = initialState, action) => {
           ...state,
           film: [...film, { id: filmId, rating }],
         };
+
+    case SET_REVIEW: {
+      const { reviews } = state;
+      const { review } = action;
+      return {
+        ...state,
+        reviews: [...reviews, review],
+      };
+    }
 
     default:
       return state;

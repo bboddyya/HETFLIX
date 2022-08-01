@@ -149,7 +149,7 @@ function SingleMovie() {
         />
       </div>
       <div className="single-movie__reviews">
-        <Reviews />
+        <Reviews id={id} />
       </div>
     </div>
   );

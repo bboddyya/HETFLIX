@@ -7,11 +7,14 @@ import "./RatingSelection.scss";
 export function RatingSelection(props) {
   const [hover, setHover] = useState(null);
 
-  const dispatch = useDispatch();
-  const rating = useSelector((state) => state.ratingSelection.film.rating);
-  const handleRating = (ratingValue) => dispatch(setRating(ratingValue, id));
   const id = props.id;
-  console.log(id);
+  const dispatch = useDispatch();
+  const rating = useSelector(
+    (state) =>
+      state.ratingSelection.film.filter((el) => el.id === id)?.[0]?.rating
+  );
+  const handleRating = (ratingValue) => dispatch(setRating(ratingValue, id));
+  console.log(rating);
   return (
     <div className="rating-selection">
       {[...Array(10)].map((star, index) => {

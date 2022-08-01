@@ -1,10 +1,11 @@
 import ReviewsInput from "./ReviewsInputs/ReviewsInputs";
 import ReviewsList from "./ReviewsList/ReviewsList";
 import "./Reviews.scss";
-function Reviews() {
+function Reviews(props) {
+  const id = props.id;
   return (
     <div className="reviews__wrapper">
-      <ReviewsInput />
+      <ReviewsInput id={id} />
       <ReviewsList />
     </div>
   );

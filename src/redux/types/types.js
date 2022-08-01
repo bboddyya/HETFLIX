@@ -14,3 +14,4 @@ export const SET_RATING = "SET_RATING";
 export const SET_HOVER = "SET_HOVER";
 export const GET_SIMILARS = "GET_SIMILARS";
 export const GET_SIMILARS_ISLOADING = "GET_SIMILARS_ISLOADING";
+export const SET_REVIEW = "SET_REVIEW";
