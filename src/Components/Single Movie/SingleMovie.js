@@ -7,14 +7,14 @@ import {
   getBoxOffice,
   getSimilars,
 } from "../../redux/actions/actions";
-import { MdOutlineBookmarkBorder, MdOutlineBookmark } from "react-icons/md";
 import { getTime } from "../../utils/getTime";
 import "./SingleMovie.scss";
-import RatingSelection from "./RatingSelection.js/RatingSelection";
+import RatingSelection from "./RatingSelection/RatingSelection";
 import { filmSLiderProperties } from "../../utils/filmsSliderProperties";
 import FilmsSlider from "../Movie/FilmsSpinner/FilmsSlider";
 import { Link, Element } from "react-scroll";
 import Reviews from "./Reviews/Reviews";
+import FavoriteButton from "./Favorite Button/FavoriteButton";
 
 function SingleMovie() {
   const { id } = useParams();
@@ -40,9 +40,9 @@ function SingleMovie() {
   return (
     <div className=".single-movie__wrapper ">
       <div className="single-movie">
-        <div className="single-movie__logo">
+        {/* <div className="single-movie__logo">
           <img src={movie.logoUrl} />{" "}
-        </div>
+        </div> */}
         <div className="single-movie__header">
           <div className="single-movie__poster">
             <img src={movie.posterUrl} />
@@ -54,10 +54,7 @@ function SingleMovie() {
                 <div className="single-movie__title-en">
                   {movie.nameOriginal}
                 </div>
-                <div className="single-movie__favorites-buttons">
-                  <MdOutlineBookmarkBorder className="single-movie__delete icon" />
-                  <MdOutlineBookmark className="single-movie__favorites icon" />
-                </div>
+                <FavoriteButton movie={movie} />
               </div>
               <div className="single-movie__rating">
                 <div className="single-movie__rating-default">

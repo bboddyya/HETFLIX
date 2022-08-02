@@ -1,11 +1,19 @@
-import { SET_RATING, SET_REVIEW } from "../types/types";
+import {
+  SET_RATING,
+  SET_REVIEW,
+  SET_FAVORITE,
+  REMOVE_FAVORITE,
+} from "../types/types";
 
 const initialState = {
   film: [],
   reviews: [],
+  favorite: [],
 };
 
 export const ratingSelection = (state = initialState, action) => {
+  const { favorite } = state;
+
   switch (action.type) {
     case SET_RATING:
       const { filmId, rating } = action;
@@ -36,6 +44,25 @@ export const ratingSelection = (state = initialState, action) => {
       };
     }
 
+    case SET_FAVORITE:
+      const { favoriteMovie } = action;
+
+      return {
+        ...state,
+        favorite: [...favorite, favoriteMovie],
+      };
+
+    case REMOVE_FAVORITE:
+      return (() => {
+        const { favorite } = state;
+        const { removeId } = action;
+        const filtered = favorite.filter((el) => el.id !== removeId);
+
+        return {
+          ...state,
+          favorite: filtered,
+        };
+      })();
     default:
       return state;
   }

@@ -15,6 +15,8 @@ import {
   GET_SIMILARS,
   GET_SIMILARS_ISLOADING,
   SET_REVIEW,
+  SET_FAVORITE,
+  REMOVE_FAVORITE,
 } from "../types/types";
 import { configuration } from "../../api/configurationForApi";
 
@@ -166,5 +168,19 @@ export function setRreview(id, name, date, title, text) {
       title,
       text,
     },
+  };
+}
+
+export function setFavorite(id, logo, name, rating) {
+  return {
+    type: SET_FAVORITE,
+    favoriteMovie: { id, logo, name, rating },
+  };
+}
+
+export function removeFavorite(removeId) {
+  return {
+    type: REMOVE_FAVORITE,
+    removeId,
   };
 }
