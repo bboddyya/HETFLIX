@@ -7,6 +7,8 @@ import PaginationContainer from "./Containers/PaginationContainer";
 import SingleMovie from "./Components/Single Movie/SingleMovie";
 import UpArrow from "./Components/UpArrow.js/UpArrow";
 import ScrollToTop from "./utils/ScrollToTop";
+import FavoritesFilmsContainer from "./Containers/FavoritesFilmsContainer";
+
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,7 @@ function App() {
           <Route path="*" element={<MainPageContainer />} />
           <Route path="/films/:type" element={<PaginationContainer />} />
           <Route path="/film/:id" element={<SingleMovie />} />
+          <Route path="/favorite-films" element={<FavoritesFilmsContainer />} />
         </Routes>
       </ScrollToTop>
 

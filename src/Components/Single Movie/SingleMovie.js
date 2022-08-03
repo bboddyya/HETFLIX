@@ -40,9 +40,6 @@ function SingleMovie() {
   return (
     <div className=".single-movie__wrapper ">
       <div className="single-movie">
-        {/* <div className="single-movie__logo">
-          <img src={movie.logoUrl} />{" "}
-        </div> */}
         <div className="single-movie__header">
           <div className="single-movie__poster">
             <img src={movie.posterUrl} />

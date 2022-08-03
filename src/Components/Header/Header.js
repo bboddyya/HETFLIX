@@ -19,7 +19,9 @@ function Header() {
         </div>
         <div className="header-wrapper__movie">Кино</div>
         <div className="header-wrapper__shows">Сериалы</div>
-        <div className="header-wrapper__favorite-movie">Избранное</div>
+        <Link to="/favorite-films">
+          <div className="header-wrapper__favorite-movie">Избранное</div>
+        </Link>
       </div>
 
       <div className="header-wrapper__right-side">
