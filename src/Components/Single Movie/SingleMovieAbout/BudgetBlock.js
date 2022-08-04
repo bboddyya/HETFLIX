@@ -5,7 +5,7 @@ export function BudgetBlock() {
 
   return (
     <>
-      {boxOffice.length && (
+      {boxOffice[0] && (
         <div className="about__block">
           <div className="about__title">Бюджет:</div>
           {boxOffice.map((el) => {
