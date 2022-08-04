@@ -22,7 +22,6 @@ function ReviewsInput(props) {
 
   return (
     <div className="reviews-input__wrapper">
-      <h1>Оставьте рецензию</h1>
       <div className="reviews-input__name-input">
         <input
           type="text"
@@ -48,7 +47,7 @@ function ReviewsInput(props) {
         ></textarea>
       </div>
       <button className="reviews-input__add-button" onClick={handleSubmit}>
-        Отправить
+        Оотправить рецензию
       </button>
     </div>
   );

@@ -4,18 +4,35 @@ $placeholderColor: rgba(134, 134, 134, 0.6);
 
 .reviews__wrapper {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 17px;
   width: 100%;
   justify-content: space-evenly;
   font-family: "Oswald";
-  background-color: rgb(233 233 255 / 33%);
+  background-color: rgba(233, 233, 255, 0.33);
+  padding-top: 36px;
+
+  ::-webkit-scrollbar {
+    height: 6px;
+    width: 7px;
+    background: rgb(251, 251, 251);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(40, 79, 151);
+    -webkit-border-radius: 0px;
+  }
+  ::-webkit-scrollbar-corner {
+    background: rgb(255, 255, 255);
+    -webkit-border-radius: 5px;
+  }
 
   .reviews-input__wrapper {
     flex: 0 0 30%;
     border-radius: 10px;
-    padding: 20px 30px;
+    padding-right: 30px;
+    padding-left: 30px;
     font-family: "Oswald";
     button {
       width: 101%;
@@ -109,13 +126,17 @@ $placeholderColor: rgba(134, 134, 134, 0.6);
   }
 
   .reviews-list__wrapper {
-    flex: 0 0 50%;
-    padding: 20px 30px;
+    flex: 0 0 39%;
+    padding-right: 50px;
+    padding-left: 30px;
+    max-height: 554px;
+    overflow-y: scroll;
 
     .reviews-list__element {
       background-color: $colorInput;
       padding: 20px;
       border-radius: 10px;
+      margin-bottom: 5px;
 
       .reviews-list__header {
         display: flex;

@@ -1,31 +1,14 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  getById,
-  getStaff,
-  getBoxOffice,
-  getSimilars,
-} from "../../redux/actions/actions";
-import { getTime } from "../../utils/getTime";
+import { useSelector } from "react-redux";
 import "./SingleMovie.scss";
 import RatingSelection from "./RatingSelection/RatingSelection";
 import { filmSLiderProperties } from "../../utils/filmsSliderProperties";
 import FilmsSlider from "../Movie/FilmsSpinner/FilmsSlider";
-import { Link, Element } from "react-scroll";
+import { Element } from "react-scroll";
 import Reviews from "./Reviews/Reviews";
-import FavoriteButton from "./Favorite Button/FavoriteButton";
+import SingleMovieHeader from "./Header/SingleMovieHeader";
+import SingleMovieAbout from "./SingleMovieAbout/SingleMovieAbout";
 
-function SingleMovie() {
-  const { id } = useParams();
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getById(id));
-    dispatch(getStaff(id));
-    dispatch(getBoxOffice(id));
-    dispatch(getSimilars(id));
-  }, [id]);
-
+function SingleMovie({ id }) {
   const movie = useSelector((state) => state.movie.movieById.movie);
   const similarMovie = useSelector(
     (state) => state.movie.moviesSimilar.movieList
@@ -36,99 +19,15 @@ function SingleMovie() {
     state.ratingSelection.film.filter((el) => el.id === id)
   );
 
-  console.log("rating value->", ...ratingValue);
   return (
-    <div className=".single-movie__wrapper ">
+    <div className=".single-movie__wrapper" style={{ paddingTop: "30px" }}>
       <div className="single-movie">
-        <div className="single-movie__header">
-          <div className="single-movie__poster">
-            <img src={movie.posterUrl} />
-          </div>
-          <div className="single-movie__header-info">
-            <div className="single-movie__title-rating">
-              <div className="single-movie__title">
-                <div className="single-movie__title-ru">{`${movie.nameRu} (${movie.year})`}</div>
-                <div className="single-movie__title-en">
-                  {movie.nameOriginal}
-                </div>
-                <FavoriteButton movie={movie} />
-              </div>
-              <div className="single-movie__rating">
-                <div className="single-movie__rating-default">
-                  {movie.ratingKinopoisk}
-                </div>
-                <Link
-                  className="single-movie__rating-user"
-                  to="test1"
-                  smooth={true}
-                  offset={-100}
-                  duration={300}
-                >
-                  {ratingValue.length ? ratingValue[0].rating : "Оцените фильм"}
-                </Link>
-              </div>
-            </div>
-            <div className="single-movie__short-discription">
-              {movie.description ?? movie.shortDescription}
-            </div>
-          </div>
-        </div>
-        <div className="single-movie__about">
-          <h1 className="single-movie__about-title">О фильме</h1>
-          <div className="about__block">
-            <div className="about__title">Режиссер:</div>
-            <div className="about__link">
-              {director?.map((el, index, arr) => {
-                if (index !== arr.length - 1) {
-                  return <span key={el.staffId}>{`${el.nameRu}, `}</span>;
-                }
-                return <span>{el.nameRu}</span>;
-              })}
-            </div>
-          </div>
-          <div className="about__block">
-            <div className="about__title">Год:</div>
-            <div className="about__link">{movie.year}</div>
-          </div>
-          <div className="about__block">
-            <div className="about__title">Страна:</div>
-            <div className="about__link">
-              {movie.countries?.map((el, index, arr) => {
-                if (index !== arr.length - 1) {
-                  return <span>{`${el.country}, `}</span>;
-                }
-                return <span>{el.country}</span>;
-              })}
-            </div>
-          </div>
-          <div className="about__block">
-            <div className="about__title">Жанр:</div>
-            <div className="about__link">
-              {movie.genres?.map((el, index, arr) => {
-                if (index !== arr.length - 1) {
-                  return <span>{`${el.genre}, `}</span>;
-                }
-                return <span>{el.genre}</span>;
-              })}
-            </div>
-          </div>
-          <div className="about__block">
-            <div className="about__title">Бюджет:</div>
-            {boxOffice.map((el) => {
-              return (
-                <div className="about__link" key={Date.now()}>{`${
-                  el.symbol
-                }${el.amount.toLocaleString()} `}</div>
-              );
-            })}
-          </div>
-          {movie.filmLength && (
-            <div className="about__block">
-              <div className="about__title">Время: </div>
-              <div className="about__link">{getTime(movie?.filmLength)}</div>
-            </div>
-          )}
-        </div>
+        <SingleMovieHeader movie={movie} ratingValue={ratingValue} />
+        <SingleMovieAbout
+          director={director}
+          boxOffice={boxOffice}
+          movie={movie}
+        />
         <Element name="test1" className="element">
           <div className="single-movie__rating-selection">
             <h2>Оцените фильм</h2>

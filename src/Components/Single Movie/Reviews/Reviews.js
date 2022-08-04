@@ -6,7 +6,7 @@ function Reviews(props) {
   return (
     <div className="reviews__wrapper">
       <ReviewsInput id={id} />
-      <ReviewsList />
+      <ReviewsList id={id} />
     </div>
   );
 }
