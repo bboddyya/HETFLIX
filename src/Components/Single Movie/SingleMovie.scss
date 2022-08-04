@@ -5,6 +5,13 @@
   padding-top: 30px;
 }
 
+.movie__spinner {
+  position: fixed;
+  top: 45%;
+  right: 45%;
+  z-index: 15;
+}
+
 .single-movie {
   width: 100%;
   display: flex;

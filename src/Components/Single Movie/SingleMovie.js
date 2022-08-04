@@ -13,8 +13,7 @@ function SingleMovie({ id }) {
   const similarMovie = useSelector(
     (state) => state.movie.moviesSimilar.movieList
   );
-  const director = useSelector((state) => state.movie.staffData.director);
-  const boxOffice = useSelector((state) => state.movie.boxOfficeData.boxOffice);
+
   const ratingValue = useSelector((state) =>
     state.ratingSelection.film.filter((el) => el.id === id)
   );
@@ -22,17 +21,10 @@ function SingleMovie({ id }) {
   return (
     <div className=".single-movie__wrapper" style={{ paddingTop: "30px" }}>
       <div className="single-movie">
-        <SingleMovieHeader movie={movie} ratingValue={ratingValue} />
-        <SingleMovieAbout
-          director={director}
-          boxOffice={boxOffice}
-          movie={movie}
-        />
+        <SingleMovieHeader movie={movie} ratingValue={ratingValue} id={id} />
+        <SingleMovieAbout />
         <Element name="test1" className="element">
-          <div className="single-movie__rating-selection">
-            <h2>Оцените фильм</h2>
-            <RatingSelection id={id} />
-          </div>
+          <RatingSelection id={id} />
         </Element>
       </div>
       <div className="single-movie__same-films">

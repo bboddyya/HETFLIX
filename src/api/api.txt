@@ -31,7 +31,7 @@ async function fetchFilms() {
 https://kinopoiskapiunofficial.tech/api/v1/staff?filmId=${id} - режиссеры и актеры 
 https://kinopoiskapiunofficial.tech/api/v2.2/films/${id}/box_office - сборы бюджет 
 https://kinopoiskapiunofficial.tech/api/v2.2/films/${id} - фильм по id 
-
+https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=${words}&page=1 - поиск по слову 
 
 setInterval(()=>{
   console.log("я сраркус")

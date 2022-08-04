@@ -1,7 +1,13 @@
 import { Link } from "react-scroll";
 import FavoriteButton from "../Favorite Button/FavoriteButton";
+import { useSelector } from "react-redux";
 
-function SingleMovieHeader({ movie, ratingValue }) {
+function SingleMovieHeader({ id }) {
+  const ratingValue = useSelector((state) =>
+    state.ratingSelection.film.filter((el) => el.id === id)
+  );
+  const movie = useSelector((state) => state.movie.movieById.movie);
+
   return (
     <div className="single-movie__header">
       <div className="single-movie__poster">

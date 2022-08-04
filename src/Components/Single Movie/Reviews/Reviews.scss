@@ -16,16 +16,19 @@ $placeholderColor: rgba(134, 134, 134, 0.6);
   ::-webkit-scrollbar {
     height: 6px;
     width: 7px;
-    background: rgb(251, 251, 251);
+    // background: rgb(251, 251, 251);
+    cursor: pointer;
   }
 
   ::-webkit-scrollbar-thumb {
     background: rgb(40, 79, 151);
     -webkit-border-radius: 0px;
+    cursor: pointer;
   }
   ::-webkit-scrollbar-corner {
     background: rgb(255, 255, 255);
     -webkit-border-radius: 5px;
+    cursor: pointer;
   }
 
   .reviews-input__wrapper {
@@ -124,10 +127,9 @@ $placeholderColor: rgba(134, 134, 134, 0.6);
       display: block;
     }
   }
-
   .reviews-list__wrapper {
     flex: 0 0 39%;
-    padding-right: 50px;
+    padding-right: 60px;
     padding-left: 30px;
     max-height: 554px;
     overflow-y: scroll;

@@ -15,28 +15,31 @@ export function RatingSelection(props) {
   );
   const handleRating = (ratingValue) => dispatch(setRating(ratingValue, id));
   return (
-    <div className="rating-selection">
-      {[...Array(10)].map((star, index) => {
-        const ratingValue = index + 1;
-        return (
-          <label>
-            <input
-              type="radio"
-              name="rating"
-              value={ratingValue}
-              onClick={() => handleRating(ratingValue, id)}
-            />
-            <FaStar
-              size={40}
-              className="rating-selection__star"
-              onMouseEnter={() => setHover(ratingValue)}
-              onMouseLeave={() => setHover(null)}
-              color={ratingValue <= (hover || rating) ? "white" : "grey"}
-            />
-            <div className="rating-selection__number">{index + 1}</div>
-          </label>
-        );
-      })}
+    <div className="single-movie__rating-selection">
+      <h2>Оцените фильм</h2>
+      <div className="rating-selection">
+        {[...Array(10)].map((star, index) => {
+          const ratingValue = index + 1;
+          return (
+            <label>
+              <input
+                type="radio"
+                name="rating"
+                value={ratingValue}
+                onClick={() => handleRating(ratingValue, id)}
+              />
+              <FaStar
+                size={40}
+                className="rating-selection__star"
+                onMouseEnter={() => setHover(ratingValue)}
+                onMouseLeave={() => setHover(null)}
+                color={ratingValue <= (hover || rating) ? "white" : "grey"}
+              />
+              <div className="rating-selection__number">{index + 1}</div>
+            </label>
+          );
+        })}
+      </div>
     </div>
   );
 }
