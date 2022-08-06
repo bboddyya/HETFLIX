@@ -36,6 +36,7 @@ function SearchResults() {
                 className="search-result"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
+                transition={{ type: "spring", stiffness: 300 }}
                 key={el.filmId}
               >
                 <div className="search-result__card">

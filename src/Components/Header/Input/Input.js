@@ -2,28 +2,23 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { getInputFilms } from "../../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 import SearchResults from "./SearchReuslts";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 function Input() {
   const [showResults, setShowResults] = useState(false);
   const [text, setText] = useState("");
 
   const dispatch = useDispatch();
-  const handleSet = () => {
-    setTimeout(() => {}, 500);
-  };
-  const handleInput = (e) => {
-    // setInterval(, 1000);
+
+  const handleSetText = (e) => {
     setText(e.target.value);
   };
 
   useEffect(() => {
-    setShowResults(true);
-    dispatch(getInputFilms(text));
+    const delayFetch = setTimeout(() => {
+      dispatch(getInputFilms(text));
+    }, 300);
+    return () => clearInterval(delayFetch);
   }, [text]);
-
-  const searchIsLoading = useSelector(
-    (state) => state.movie.inputSearch.isLoading
-  );
 
   return (
     <>
@@ -31,7 +26,7 @@ function Input() {
         type="text"
         className="header-wrapper__input"
         placeholder="Поиск"
-        onChange={handleInput}
+        onChange={handleSetText}
         onFocus={() => setShowResults(true)}
         onBlur={() => setShowResults(false)}
       />{" "}
