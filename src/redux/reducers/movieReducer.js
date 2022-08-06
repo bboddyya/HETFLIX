@@ -13,6 +13,8 @@ import {
   GET_BOX_OFFICE_ISLOADING,
   GET_SIMILARS,
   GET_SIMILARS_ISLOADING,
+  GET_INPUT_FILMS,
+  INPUT_FILMS_LOADING,
 } from "../types/types";
 
 const initialState = {
@@ -28,6 +30,7 @@ const initialState = {
   },
   boxOfficeData: { boxOffice: [], isLoading: false },
   moviesSimilar: { movieList: [], isLoading: false },
+  inputSearch: { movieList: [], isLoading: false },
 };
 
 export const movieReducer = (state = initialState, action) => {
@@ -155,6 +158,22 @@ export const movieReducer = (state = initialState, action) => {
         ...state,
         moviesSimilar: { ...moviesSimilar, isLoading: true },
       };
+
+    case GET_INPUT_FILMS:
+      const { inputSearch } = state;
+      const { films } = action;
+      return {
+        ...state,
+        inputSearch: { ...inputSearch, movieList: films, isLoading: false },
+      };
+
+    case INPUT_FILMS_LOADING:
+      return {
+        ...state,
+        inputSearch: { ...moviesSimilar, isLoading: true },
+      };
+
+      
 
     default:
       return state;

@@ -1,8 +1,9 @@
 import "./Header.scss";
-import { AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import Input from "./Input/Input";
 
 function Header() {
+  console.log("Header render");
   return (
     <header className="header-wrapper">
       <div className="header-wrapper__navigation">
@@ -25,14 +26,7 @@ function Header() {
       </div>
 
       <div className="header-wrapper__right-side">
-        <input
-          type="text"
-          className="header-wrapper__input"
-          placeholder="Поиск"
-        />{" "}
-        <div className="header-wrapper__input-control">
-          <AiOutlineSearch className="header-wrapper__search-icon" />
-        </div>
+        <Input />
       </div>
     </header>
   );

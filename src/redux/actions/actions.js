@@ -17,6 +17,8 @@ import {
   SET_REVIEW,
   SET_FAVORITE,
   REMOVE_FAVORITE,
+  INPUT_FILMS_LOADING,
+  GET_INPUT_FILMS,
 } from "../types/types";
 import { configuration } from "../../api/configurationForApi";
 
@@ -182,5 +184,22 @@ export function removeFavorite(removeId) {
   return {
     type: REMOVE_FAVORITE,
     removeId,
+  };
+}
+
+export function getInputFilms(keyWord) {
+  return async (dispatch) => {
+    dispatch({
+      type: INPUT_FILMS_LOADING,
+    });
+    const response = await fetch(
+      `https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=${keyWord}&page=1`,
+      configuration
+    );
+    const { films } = await response.json();
+    dispatch({
+      type: GET_INPUT_FILMS,
+      films,
+    });
   };
 }
