@@ -55,23 +55,26 @@
         @extend %hoverHeader;
       }
     }
-    .header-wrapper__favorite-movie {
-      margin-left: 30px;
-      cursor: pointer;
-      transition: all 0.5s ease;
-      @extend %fontstyle;
-      &:hover {
-        @extend %hoverHeader;
-      }
-    }
   }
 
   .header-wrapper__right-side {
     display: flex;
     position: relative;
+    align-items: flex-end;
 
     .movie__spinner {
       position: absolute;
+    }
+
+    .header-wrapper__favorite-movie {
+      margin-left: 10px;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      @extend %fontstyle;
+
+      .header-wrapper__favorite-movie:hover {
+        @extend %hoverHeader;
+      }
     }
 
     .header-wrapper__input {
@@ -79,14 +82,17 @@
       width: 300px;
       height: 25px;
       border: none;
-      border-radius: 10px;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
+      border-bottom: solid rgba(232, 224, 224, 0.696) 1px;
       padding: 8px;
-      padding-left: 13px;
+      padding-left: 1px;
       font-size: 20px;
       color: aliceblue;
-      background-color: rgba(128, 128, 128, 0.493);
+      background-color: transparent;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .header-wrapper__input:focus {
+      border-bottom: solid rgba(246, 46, 46, 0.696) 1px;
     }
 
     .header-wrapper__input-control {
@@ -115,6 +121,7 @@
       position: absolute;
       right: -3%;
       top: 130%;
+      width: 300px;
 
       .search-result:hover {
         background-color: rgb(203, 203, 203);

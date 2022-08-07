@@ -1,6 +1,7 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import Input from "./Input/Input";
+import { BsBookmark } from "react-icons/bs";
 
 function Header() {
   console.log("Header render");
@@ -18,15 +19,19 @@ function Header() {
             </div>{" "}
           </Link>
         </div>
-        <div className="header-wrapper__movie">Кино</div>
-        <div className="header-wrapper__shows">Сериалы</div>
-        <Link to="/favorite-films">
-          <div className="header-wrapper__favorite-movie">Избранное</div>
-        </Link>
       </div>
 
       <div className="header-wrapper__right-side">
         <Input />
+        <Link to="/favorite-films">
+          <div className="header-wrapper__favorite-movie">
+            <BsBookmark
+              className="header-wrapper__favorite-movie"
+              size={25}
+              color={"white"}
+            />
+          </div>
+        </Link>
       </div>
     </header>
   );

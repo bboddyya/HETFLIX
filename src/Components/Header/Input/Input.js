@@ -16,7 +16,7 @@ function Input() {
   useEffect(() => {
     const delayFetch = setTimeout(() => {
       dispatch(getInputFilms(text));
-    }, 300);
+    }, 400);
     return () => clearInterval(delayFetch);
   }, [text]);
 
@@ -30,9 +30,9 @@ function Input() {
         onFocus={() => setShowResults(true)}
         onBlur={() => setShowResults(false)}
       />{" "}
-      <div className="header-wrapper__input-control">
+      {/* <div className="header-wrapper__input-control">
         <AiOutlineSearch className="header-wrapper__search-icon" />
-      </div>
+      </div> */}
       {showResults && <SearchResults />}
     </>
   );
