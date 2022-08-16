@@ -3,7 +3,7 @@
   margin-top: 50px;
   width: 85%;
   height: 30%;
-  font-family: "Oswald", sans-serif;
+  font-family: "Montserrat", sans-serif;
   position: relative;
 }
 
@@ -24,21 +24,21 @@ a {
 }
 
 .movie__title h1 {
-  font-size: 30px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.7);
   font-weight: 300;
 }
 
 .movie__title span {
   font-size: 19px;
-  color: rgba(255, 255, 255, 0.537);
+  color: rgba(0, 0, 0, 0.7);
   font-weight: 300;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .movie__title span:hover {
-  color: rgba(255, 255, 255, 0.766);
+  color: rgba(13, 96, 35, 0.786);
 }
 
 .movie__wrapper {
@@ -95,14 +95,25 @@ a {
 }
 
 .slick-dots li.slick-active button:before {
-  color: White !important;
+  color: rgb(0, 0, 0) !important;
   font-size: 10px !important;
 }
 
 .slick-dots li button:before {
-  color: rgb(137, 137, 137) !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 .slick-track {
   overflow: visible !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

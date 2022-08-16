@@ -47,7 +47,7 @@ function ReviewsInput(props) {
         ></textarea>
       </div>
       <button className="reviews-input__add-button" onClick={handleSubmit}>
-        Оотправить рецензию
+        Отправить рецензию
       </button>
     </div>
   );

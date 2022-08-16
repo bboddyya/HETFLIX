@@ -1,0 +1,30 @@
+.single-movie__favorites-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  .icon {
+    font-size: 35px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  }
+  .icon:hover {
+    color: rgb(111, 111, 111);
+  }
+  .icon:active {
+    transform: scale(0.9);
+  }
+
+  span {
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  }
+  span:hover {
+    color: rgb(111, 111, 111);
+  }
+
+  span:active {
+    transform: scale(0.9);
+  }
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { GiPlainCircle } from "react-icons/gi";
 import { useDispatch, useSelector } from "react-redux";
 import { setRating } from "../../../redux/actions/actions";
 import "./RatingSelection.scss";
@@ -28,12 +29,12 @@ export function RatingSelection(props) {
                 value={ratingValue}
                 onClick={() => handleRating(ratingValue, id)}
               />
-              <FaStar
-                size={40}
+              <GiPlainCircle
+                size={35}
                 className="rating-selection__star"
                 onMouseEnter={() => setHover(ratingValue)}
                 onMouseLeave={() => setHover(null)}
-                color={ratingValue <= (hover || rating) ? "white" : "grey"}
+                fill={ratingValue <= (hover || rating) ? "black" : "grey"}
               />
               <div className="rating-selection__number">{index + 1}</div>
             </label>

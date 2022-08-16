@@ -1,6 +1,5 @@
-import { AiOutlineSearch } from "react-icons/ai";
 import { getInputFilms } from "../../../redux/actions/actions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import SearchResults from "./SearchReuslts";
 import { useEffect, useState } from "react";
 function Input() {
@@ -21,20 +20,16 @@ function Input() {
   }, [text]);
 
   return (
-    <>
+    <div className="input-container">
       <input
         type="text"
         className="header-wrapper__input"
         placeholder="Поиск"
         onChange={handleSetText}
         onFocus={() => setShowResults(true)}
-        onBlur={() => setShowResults(false)}
       />{" "}
-      {/* <div className="header-wrapper__input-control">
-        <AiOutlineSearch className="header-wrapper__search-icon" />
-      </div> */}
-      {showResults && <SearchResults />}
-    </>
+      {showResults && <SearchResults setShowResults={setShowResults} />}
+    </div>
   );
 }
 

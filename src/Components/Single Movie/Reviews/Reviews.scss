@@ -1,7 +1,7 @@
 $colorInput: rgb(255 255 255 / 66%);
 $colorInputFocus: rgba(255, 255, 255, 0.838);
-$placeholderColor: rgba(134, 134, 134, 0.6);
-
+$placeholderColor: #deddda;
+$borderRadius: 8px;
 .reviews__wrapper {
   display: flex;
   align-items: stretch;
@@ -9,14 +9,14 @@ $placeholderColor: rgba(134, 134, 134, 0.6);
   margin-top: 17px;
   width: 100%;
   justify-content: space-evenly;
-  font-family: "Oswald";
-  background-color: rgba(233, 233, 255, 0.33);
+  font-family: "Montserrat", sans-serif;
+
+  background-color: #000001;
   padding-top: 36px;
 
   ::-webkit-scrollbar {
     height: 6px;
     width: 7px;
-    // background: rgb(251, 251, 251);
     cursor: pointer;
   }
 
@@ -33,53 +33,56 @@ $placeholderColor: rgba(134, 134, 134, 0.6);
 
   .reviews-input__wrapper {
     flex: 0 0 30%;
-    border-radius: 10px;
+    border-radius: $borderRadius;
     padding-right: 30px;
     padding-left: 30px;
-    font-family: "Oswald";
+    font-family: "Montserrat";
     button {
       width: 101%;
       font-size: 25px;
       padding: 5px;
       outline: none;
-      background-color: #213b6999;
-      color: white;
+      background-color: #38383899;
+      color: #deddda;
       border: none;
-      font-family: "Oswald";
+      font-family: "Montserrat";
       cursor: pointer;
       transition: all 0.2s ease-out;
     }
     button:hover {
-      background-color: #244e9699;
+      background-color: #deddda;
+      color: black;
     }
 
     button:active {
-      transform: scale(0.9);
-      background-color: #192e5299;
+      transform: scale(0.95);
+      background-color: #9b9b9b;
     }
     h1 {
       color: $colorInput;
     }
 
     input {
-      height: 30px;
+      height: 50px;
       font-size: 23px;
       text-decoration: none;
       border: none;
       outline: none;
-      border-radius: 5px;
+      border-radius: $borderRadius;
+      border: solid 2px rgba(189, 189, 189, 0.548);
       padding: 5px;
       margin-bottom: 10px;
-      font-family: "Oswald";
-      background-color: $colorInput;
+      font-family: "Montserrat";
+      background-color: transparent;
       transition: all 0.3s ease;
+      color: #deddda;
     }
 
     input::placeholder {
       color: $placeholderColor;
     }
     input:focus {
-      background-color: $colorInputFocus;
+      border: solid 2px #f0ce65b9;
     }
 
     textarea::placeholder {
@@ -87,21 +90,23 @@ $placeholderColor: rgba(134, 134, 134, 0.6);
     }
 
     textarea:focus {
-      background-color: $colorInputFocus;
+      border: solid 2px #f0ce65b9;
     }
     textarea {
       font-size: 23px;
       padding: 5px;
       outline: none;
       text-decoration: none;
-      font-family: "Oswald";
+      font-family: "Montserrat";
       width: 100%;
       resize: none;
-      border-radius: 5px;
-      height: 400px;
-      background-color: $colorInput;
+      border-radius: $borderRadius;
+      border: solid 2px rgba(189, 189, 189, 0.548);
+      height: 300px;
+      background-color: transparent;
       transition: all 0.3s ease;
       margin-bottom: 10px;
+      color: #deddda;
 
       &:active {
         background-color: green($color: #000000);
@@ -135,16 +140,19 @@ $placeholderColor: rgba(134, 134, 134, 0.6);
     overflow-y: scroll;
 
     .reviews-list__element {
-      background-color: $colorInput;
+      background-color: transparent;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: $borderRadius;
+      border: solid 2px #deddda67;
       margin-bottom: 5px;
+      color: #deddda;
+      font-family: "Montserrat", sans-serif;
 
       .reviews-list__header {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        border-bottom: solid 1px rgba(0, 0, 0, 0.171);
+        border-bottom: solid 1px #deddda67;
         width: 100%;
 
         .reviews-list__name {
@@ -157,7 +165,8 @@ $placeholderColor: rgba(134, 134, 134, 0.6);
       .reviews-list__main {
         font-size: 25px;
         h3 {
-          margin-bottom: 10px;
+          margin: 10px 0;
+          font-size: 20px;
         }
 
         .reviews-list__text {

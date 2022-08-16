@@ -36,7 +36,7 @@ function SingleMovieContainer() {
     boxOfficeIsLoading &&
     staffDataIsLoading ? (
     <ClipLoader
-      color="red"
+      color="black"
       loading
       size={100}
       speedMultiplier={0.8}

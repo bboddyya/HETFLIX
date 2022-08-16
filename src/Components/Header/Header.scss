@@ -20,6 +20,7 @@
   top: 0;
   background-color: rgb(30, 30, 30);
   padding: 10px;
+  font-family: "Montserrat";
 
   .header-wrapper__navigation {
     display: flex;
@@ -62,8 +63,7 @@
     position: relative;
     align-items: flex-end;
 
-    .movie__spinner {
-      position: absolute;
+    .input-container {
     }
 
     .header-wrapper__favorite-movie {
@@ -86,13 +86,13 @@
       padding: 8px;
       padding-left: 1px;
       font-size: 20px;
-      color: aliceblue;
+      color: #deddda;
       background-color: transparent;
       transition: all 0.2s ease-in-out;
     }
 
     .header-wrapper__input:focus {
-      border-bottom: solid rgba(246, 46, 46, 0.696) 1px;
+      border-bottom: solid #2b6438 1px;
     }
 
     .header-wrapper__input-control {
@@ -119,9 +119,24 @@
       display: flex;
       flex-direction: column;
       position: absolute;
-      right: -3%;
+      right: 42%;
       top: 130%;
       width: 300px;
+
+      .input-loading {
+        background-color: white;
+        width: 500px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        .input-loading__body {
+          .spinner {
+            display: block;
+          }
+        }
+      }
 
       .search-result:hover {
         background-color: rgb(203, 203, 203);

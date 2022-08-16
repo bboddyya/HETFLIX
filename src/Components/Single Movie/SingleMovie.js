@@ -27,12 +27,14 @@ function SingleMovie({ id }) {
           <RatingSelection id={id} />
         </Element>
       </div>
-      <div className="single-movie__same-films">
-        <FilmsSlider
-          movies={similarMovie}
-          filmSLiderProperties={{ ...filmSLiderProperties.moviesSimilar }}
-        />
-      </div>
+      {similarMovie.length && (
+        <div className="single-movie__same-films">
+          <FilmsSlider
+            movies={similarMovie}
+            filmSLiderProperties={{ ...filmSLiderProperties.moviesSimilar }}
+          />
+        </div>
+      )}
       <div className="single-movie__reviews">
         <Reviews id={id} />
       </div>

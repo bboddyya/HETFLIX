@@ -35,7 +35,7 @@ function SingleMovieHeader({ id }) {
             </Link>
           </div>
         </div>
-        <div className="single-movie__short-discription">
+        <div className="single-movie__short-discription" lang="de">
           {movie.description ?? movie.shortDescription}
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { setFavorite, removeFavorite } from "../../../redux/actions/actions";
 import { MdOutlineBookmarkBorder, MdOutlineBookmark } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
+import "./FavoriteButton.scss";
 
 function FavoriteButton() {
   const dispatch = useDispatch();
@@ -24,15 +25,21 @@ function FavoriteButton() {
   return (
     <div className="single-movie__favorites-buttons">
       {!isFavorite ? (
-        <MdOutlineBookmarkBorder
-          className="single-movie__favorites icon"
-          onClick={handleSetFavorite}
-        />
+        <>
+          <MdOutlineBookmarkBorder
+            className="single-movie__favorites icon"
+            onClick={handleSetFavorite}
+          />{" "}
+          <span onClick={handleSetFavorite}>Добавить в избранное</span>
+        </>
       ) : (
-        <MdOutlineBookmark
-          className="single-movie__delete icon"
-          onClick={handleRemoveFavorite}
-        />
+        <>
+          <MdOutlineBookmark
+            className="single-movie__delete icon"
+            onClick={handleRemoveFavorite}
+          />
+          <span onClick={handleRemoveFavorite}>В избранном</span>
+        </>
       )}
     </div>
   );

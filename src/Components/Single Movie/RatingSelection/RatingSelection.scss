@@ -1,10 +1,10 @@
 .rating-selection {
   display: flex;
-  font-family: "Oswald", sans-serif;
+  font-family: "Montserrat", sans-serif;
 
   &__star {
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.4s ease-in-out;
   }
 
   label {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BiChevronUpCircle } from "react-icons/bi";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import { animateScroll as scroll } from "react-scroll";
 import "./UpArrow.scss";
 function UpArrow() {
@@ -18,12 +18,10 @@ function UpArrow() {
   };
   return (
     visible && (
-      //   <div className="up-arrow" onClick={() => scroll.scrollToTop()}>
-      <BiChevronUpCircle
+      <BsFillArrowUpCircleFill
         onClick={() => scroll.scrollToTop()}
         className="up-arrow"
       />
-      //   </div>
     )
   );
 }

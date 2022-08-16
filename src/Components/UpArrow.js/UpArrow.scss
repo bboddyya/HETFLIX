@@ -1,9 +1,9 @@
 .up-arrow {
   position: fixed;
   font-size: 45px;
-  color: rgb(255, 255, 255);
+  color: #000001;
   bottom: 10%;
   right: 2%;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease-in-out;
   cursor: pointer;
 }

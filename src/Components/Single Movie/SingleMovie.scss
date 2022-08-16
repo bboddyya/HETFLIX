@@ -19,7 +19,8 @@
   align-items: center;
   overflow-x: hidden;
 
-  color: white;
+  color: #000001;
+
   &__logo {
     max-height: 69px;
     display: flex;
@@ -42,14 +43,15 @@
         height: 500px;
         width: 100%;
         border-radius: 10px;
-        box-shadow: -6px 1px 15px 14px rgba(0, 0, 0, 0.25);
+        box-shadow: -4px 3px 7px 9px rgb(129 129 129 / 25%);
+        margin-top: 10px;
       }
     }
 
     .single-movie__header-info {
       display: flex;
       flex-direction: column;
-      font-family: "Oswald", sans-serif;
+      font-family: "Montserrat", sans-serif;
       flex: 0 0 60%;
 
       .single-movie__title-rating {
@@ -68,7 +70,7 @@
         .single-movie__title-ru {
           overflow-wrap: break-word;
           margin: 0;
-          font-size: 50px;
+          font-size: 39px;
           font-weight: 600;
         }
         .single-movie__title-en {
@@ -76,17 +78,17 @@
           font-weight: 400;
           color: rgb(111, 111, 111);
         }
-        .icon {
-          font-size: 35px;
-          cursor: pointer;
-          transition: all 0.2s ease-out;
-        }
-        .icon:hover {
-          color: rgb(111, 111, 111);
-        }
-        .icon:active {
-          transform: scale(0.9);
-        }
+        // .icon {
+        //   font-size: 35px;
+        //   cursor: pointer;
+        //   transition: all 0.2s ease-out;
+        // }
+        // .icon:hover {
+        //   color: rgb(111, 111, 111);
+        // }
+        // .icon:active {
+        //   transform: scale(0.9);
+        // }
       }
 
       .single-movie__rating {
@@ -108,6 +110,7 @@
       .single-movie__short-discription {
         font-size: 25px;
         margin: 50px 0;
+        word-wrap: break-word;
       }
     }
   }
@@ -115,12 +118,11 @@
   &__about {
     display: flex;
     flex-direction: column;
-    padding: 30px 70px;
-    width: 616px;
+    padding: 33px 12px;
+    width: 692px;
     font-size: 20px;
-    font-family: "Oswald";
+    font-family: "Montserrat";
     border-radius: 20px;
-    box-shadow: 0px 2px 15px 15px rgb(0 0 0 / 35%);
 
     h1 {
       font-size: 44px;
@@ -162,7 +164,7 @@
   margin-top: 50px;
   width: 85%;
   height: 20%;
-  font-family: "Oswald", sans-serif;
+  font-family: "Montserrat", sans-serif;
   position: relative;
 }
 
