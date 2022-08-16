@@ -28,7 +28,9 @@ function Input() {
         onChange={handleSetText}
         onFocus={() => setShowResults(true)}
       />{" "}
-      {showResults && <SearchResults setShowResults={setShowResults} />}
+      {showResults && (
+        <SearchResults setShowResults={setShowResults} setText={setText} />
+      )}
     </div>
   );
 }

@@ -31,6 +31,7 @@ const initialState = {
   boxOfficeData: { boxOffice: [], isLoading: false },
   moviesSimilar: { movieList: [], isLoading: false },
   inputSearch: { movieList: [], isLoading: false },
+  errorStatus: { isError: false },
 };
 
 export const movieReducer = (state = initialState, action) => {
@@ -172,8 +173,6 @@ export const movieReducer = (state = initialState, action) => {
         ...state,
         inputSearch: { ...moviesSimilar, isLoading: true },
       };
-
-      
 
     default:
       return state;

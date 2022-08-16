@@ -30,15 +30,15 @@ a {
 }
 
 .movie__title span {
-  font-size: 19px;
-  color: rgba(0, 0, 0, 0.7);
+  font-size: 21px;
+  color: rgba(0, 0, 0, 0.869);
   font-weight: 300;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .movie__title span:hover {
-  color: rgba(13, 96, 35, 0.786);
+  color: rgba(0, 0, 0, 0.421);
 }
 
 .movie__wrapper {

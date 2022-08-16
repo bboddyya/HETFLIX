@@ -8,6 +8,7 @@ import UpArrow from "./Components/UpArrow.js/UpArrow";
 import ScrollToTop from "./utils/ScrollToTop";
 import FavoritesFilmsContainer from "./Containers/FavoritesFilmsContainer";
 import SingleMovieContainer from "./Containers/SingleMovieContainer";
+import Error from "./Components/Error/Error";
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/films/:type" element={<PaginationContainer />} />
           <Route path="/film/:id" element={<SingleMovieContainer />} />
           <Route path="/favorite-films" element={<FavoritesFilmsContainer />} />
+          <Route path="/error" element={<Error />} />
         </Routes>
       </ScrollToTop>
 

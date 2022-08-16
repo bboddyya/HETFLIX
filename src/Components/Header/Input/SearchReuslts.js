@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { getRatingColor } from "../../../utils/getColor";
 import { motion } from "framer-motion";
 import InputLoading from "./InputLoading";
-import { useEffect } from "react";
 
-function SearchResults({ setShowResults }) {
+function SearchResults({ setShowResults, setText }) {
   const searchResults = useSelector(
     (state) => state.movie.inputSearch.movieList
   );
@@ -13,15 +12,16 @@ function SearchResults({ setShowResults }) {
     (state) => state.movie.inputSearch.isLoading
   );
 
-  // useEffect(() => {
-  //   document;
-  // });
+  const handleClick = () => {
+    setShowResults(false);
+    setText("");
+  };
 
   return (
     <div
       className="header-wrapper__search-results"
       // onFocus={() => setShowResults(true)}
-      onClick={() => setShowResults(false)}
+      onClick={handleClick}
       onBlur={() => {
         setShowResults(false);
       }}
