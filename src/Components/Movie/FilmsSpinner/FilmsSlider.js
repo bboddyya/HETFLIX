@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { settings } from "../../../utils/sliderSettings";
 import { Link } from "react-router-dom";
-import SliderElement from "./SliderElement";
 import { getRatingColor } from "../../../utils/getColor";
 import { motion } from "framer-motion";
 
@@ -12,7 +11,7 @@ function FilmsSlider(props) {
   const movies = props.movies;
   const url = props.filmSLiderProperties.url;
   const title = props.filmSLiderProperties.title;
-
+  console.log(title, "rendering");
   return (
     <div className="movie__card">
       <div className="movie__title">

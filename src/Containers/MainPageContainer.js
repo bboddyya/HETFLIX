@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getTop100, getTop250, getTopAwait } from "../redux/actions/actions";
@@ -13,7 +13,11 @@ function MainPageContainer() {
     dispatch(getTopAwait(1));
   }, []);
 
-  return <MainPage />;
+  return (
+    <Suspense fallback={null}>
+      <MainPage />
+    </Suspense>
+  );
 }
 
 export default MainPageContainer;

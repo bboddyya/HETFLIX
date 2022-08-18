@@ -1,21 +1,4 @@
-import {
-  GET_250_MOVIES,
-  GET_100_MOVIES,
-  GET_AWAIT_MOVIES,
-  GET_250_ISLOADING,
-  GET_100_ISLOADING,
-  GET_AWAIT_ISLOADING,
-  GET_MOVIE_BY_ID,
-  GET_MOVIE_BY_ID_ISLOADING,
-  GET_BOX_OFFICE,
-  GET_STAFF,
-  GET_STAFF_ISLOADING,
-  GET_BOX_OFFICE_ISLOADING,
-  GET_SIMILARS,
-  GET_SIMILARS_ISLOADING,
-  GET_INPUT_FILMS,
-  INPUT_FILMS_LOADING,
-} from "../types/types";
+import * as t from "../types/types";
 
 const initialState = {
   movies250: { movieList: [], isLoading: false },
@@ -35,16 +18,8 @@ const initialState = {
 };
 
 export const movieReducer = (state = initialState, action) => {
-  const { movies250 } = state;
-  const { movies100 } = state;
-  const { moviesAwait } = state;
-  const { movieById } = state;
-  const { boxOfficeData } = state;
-  const { staffData } = state;
-  const { moviesSimilar } = state;
-
   switch (action.type) {
-    case GET_250_MOVIES:
+    case t.GET_250_MOVIES: {
       return {
         ...state,
         movies250: {
@@ -52,14 +27,18 @@ export const movieReducer = (state = initialState, action) => {
           isLoading: false,
         },
       };
-    case GET_250_ISLOADING:
+    }
+    case t.GET_250_ISLOADING: {
+      const { movies250 } = state;
       return {
         ...state,
 
         movies250: { ...movies250, isLoading: true },
       };
+    }
 
-    case GET_100_MOVIES:
+    case t.GET_100_MOVIES: {
+      const { movies100 } = state;
       return {
         ...state,
         movies100: {
@@ -68,15 +47,19 @@ export const movieReducer = (state = initialState, action) => {
           isLoading: false,
         },
       };
+    }
 
-    case GET_100_ISLOADING:
+    case t.GET_100_ISLOADING: {
+      const { movies100 } = state;
       return {
         ...state,
-
         movies100: { ...movies100, isLoading: true },
       };
+    }
 
-    case GET_AWAIT_MOVIES:
+    case t.GET_AWAIT_MOVIES: {
+      const { moviesAwait } = state;
+
       return {
         ...state,
         moviesAwait: {
@@ -85,27 +68,34 @@ export const movieReducer = (state = initialState, action) => {
           isLoading: false,
         },
       };
+    }
 
-    case GET_AWAIT_ISLOADING:
+    case t.GET_AWAIT_ISLOADING: {
+      const { moviesAwait } = state;
+
       return {
         ...state,
 
         moviesAwait: { ...moviesAwait, isLoading: true },
       };
+    }
 
-    case GET_MOVIE_BY_ID:
+    case t.GET_MOVIE_BY_ID: {
       return {
         ...state,
         movieById: { movie: action.dataById, isLoading: false },
       };
-
-    case GET_MOVIE_BY_ID_ISLOADING:
+    }
+    case t.GET_MOVIE_BY_ID_ISLOADING: {
+      const { movieById } = state;
       return {
         ...state,
         movieById: { ...movieById, isLoading: true },
       };
+    }
 
-    case GET_BOX_OFFICE:
+    case t.GET_BOX_OFFICE: {
+      const { boxOfficeData } = state;
       return {
         ...state,
         boxOfficeData: {
@@ -114,37 +104,38 @@ export const movieReducer = (state = initialState, action) => {
           isLoading: false,
         },
       };
+    }
 
-    case GET_BOX_OFFICE_ISLOADING:
+    case t.GET_BOX_OFFICE_ISLOADING: {
+      const { boxOfficeData } = state;
       return {
         ...state,
         boxOfficeData: { ...boxOfficeData, isLoading: true },
       };
-
-    case GET_STAFF:
+    }
+    case t.GET_STAFF: {
       const { director } = action;
-      const { actors } = action;
-      const { operator } = action;
-
+      const { staffData } = state;
       return {
         ...state,
 
         staffData: {
           ...staffData,
           director: director,
-          actors: actors,
-          operator: operator,
           isLoading: false,
         },
       };
-
-    case GET_STAFF_ISLOADING:
+    }
+    case t.GET_STAFF_ISLOADING: {
+      const { staffData } = state;
       return {
         ...state,
         staffData: { ...staffData, isLoading: true },
       };
+    }
 
-    case GET_SIMILARS:
+    case t.GET_SIMILARS: {
+      const { moviesSimilar } = state;
       return {
         ...state,
         moviesSimilar: {
@@ -153,26 +144,45 @@ export const movieReducer = (state = initialState, action) => {
           isLoading: false,
         },
       };
+    }
 
-    case GET_SIMILARS_ISLOADING:
+    case t.GET_SIMILARS_ISLOADING: {
+      const { moviesSimilar } = state;
       return {
         ...state,
         moviesSimilar: { ...moviesSimilar, isLoading: true },
       };
+    }
 
-    case GET_INPUT_FILMS:
+    case t.GET_INPUT_FILMS: {
       const { inputSearch } = state;
       const { films } = action;
       return {
         ...state,
         inputSearch: { ...inputSearch, movieList: films, isLoading: false },
       };
-
-    case INPUT_FILMS_LOADING:
+    }
+    case t.INPUT_FILMS_LOADING: {
+      const { moviesSimilar } = state;
       return {
         ...state,
         inputSearch: { ...moviesSimilar, isLoading: true },
       };
+    }
+
+    case t.SET_ERROR_TRUE: {
+      return {
+        ...state,
+        errorStatus: { isError: true },
+      };
+    }
+
+    case t.SET_ERROR_FALSE: {
+      return {
+        ...state,
+        errorStatus: { isError: false },
+      };
+    }
 
     default:
       return state;

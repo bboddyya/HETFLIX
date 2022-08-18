@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setRreview } from "../../../../redux/actions/actions";
 import { getDate } from "../../../../utils/getDate";
+// import { useEnterPressed } from "../../../../utils/hooks/useEnterPress";
 
 function ReviewsInput(props) {
   const [name, setName] = useState("");
@@ -13,12 +14,23 @@ function ReviewsInput(props) {
   const handletextInput = (e) => setText(e.target.value);
   const id = props.id;
 
+  // const key = useEnterPressed();
+
   const handleSubmit = () => {
-    const date = getDate();
     if (name && title && text) {
+      const date = getDate();
       dispatch(setRreview(id, name, date, title, text));
+      setName("");
+      setTitle("");
+      setText("");
     }
   };
+
+  // useEffect(() => {
+  //   if (key) {
+  //     handleSubmit();
+  //   }
+  // }, [key]);
 
   return (
     <div className="reviews-input__wrapper">

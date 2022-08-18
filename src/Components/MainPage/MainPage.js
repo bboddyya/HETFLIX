@@ -2,8 +2,8 @@ import React from "react";
 import Movie from "../Movie/Movie";
 import { ClipLoader } from "react-spinners";
 import { useSelector } from "react-redux";
-import { Routes, Route, Switch } from "react-router-dom";
-import SingleMovie from "../Single Movie/SingleMovie";
+import { Routes, Route } from "react-router-dom";
+import { memo } from "react";
 
 function MainPage() {
   const films250Ready = useSelector((state) => state.movie.movies250.isLoading);
@@ -13,7 +13,7 @@ function MainPage() {
   );
 
   return (
-    <div className="App">
+    <>
       <Routes>
         <Route
           path="/"
@@ -32,8 +32,8 @@ function MainPage() {
           }
         />
       </Routes>
-    </div>
+    </>
   );
 }
 
-export default MainPage;
+export default memo(MainPage);

@@ -2,6 +2,7 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 import Input from "./Input/Input";
 import { BsBookmark } from "react-icons/bs";
+import { memo } from "react";
 
 function Header() {
   console.log("Header render");
@@ -37,4 +38,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default memo(Header);

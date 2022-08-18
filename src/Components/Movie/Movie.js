@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import FilmsSlider from "./FilmsSpinner/FilmsSlider";
 import { filmSLiderProperties } from "../../utils/filmsSliderProperties";
+import { useNavigate } from "react-router-dom";
 
 function Movie() {
   const movies250 = useSelector((state) => {
@@ -20,7 +21,7 @@ function Movie() {
       transition: { staggerChildren: 0.1, delayChildren: 1 },
     },
   };
-
+  console.log("Movie render");
   return (
     <motion.div
       initial={{ opacity: 0 }}

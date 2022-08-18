@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import { animateScroll as scroll } from "react-scroll";
 import "./UpArrow.scss";
+import { memo } from "react";
 function UpArrow() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -26,4 +27,4 @@ function UpArrow() {
   );
 }
 
-export default UpArrow;
+export default memo(UpArrow);

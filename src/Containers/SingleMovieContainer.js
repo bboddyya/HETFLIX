@@ -24,11 +24,15 @@ function SingleMovieContainer() {
     (state) => state.movie.staffData.isLoading
   );
 
-  useEffect(() => {
+  const getMovieInfo = () => {
     dispatch(getById(id));
     dispatch(getStaff(id));
     dispatch(getBoxOffice(id));
     dispatch(getSimilars(id));
+  };
+
+  useEffect(() => {
+    getMovieInfo();
   }, [id]);
 
   return byIdIsLoading &&

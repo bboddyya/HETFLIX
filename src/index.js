@@ -12,11 +12,13 @@ import { PersistGate } from "redux-persist/integration/react";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 import autoMergeLevel2 from "redux-persist/es/stateReconciler/autoMergeLevel2";
+import { BrowserRouter } from "react-router-dom";
 
 const persistConfig = {
   key: "root",
   storage,
   stateReconciler: autoMergeLevel2,
+  blacklist: ["movie"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -31,9 +33,12 @@ const persistor = persistStore(store);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
+
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </PersistGate>
   </Provider>
   // </React.StrictMode>
