@@ -2,16 +2,18 @@ import { setFavorite, removeFavorite } from "../../../redux/actions/actions";
 import { MdOutlineBookmarkBorder, MdOutlineBookmark } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import "./FavoriteButton.scss";
+import { useMemo } from "react";
 
 function FavoriteButton() {
   const dispatch = useDispatch();
   const movie = useSelector((state) => state.movie.movieById.movie);
   const { kinopoiskId, posterUrlPreview, nameRu, ratingKinopoisk } = movie;
+  const favorite = useSelector((state) => state.ratingSelection.favorite);
 
-  const isFavorite = useSelector((state) =>
-    state.ratingSelection.favorite?.some((el) => el.id === kinopoiskId)
+  const isFavorite = useMemo(
+    () => favorite.some((el) => el.id === kinopoiskId),
+    [favorite]
   );
-
   function handleSetFavorite() {
     dispatch(
       setFavorite(kinopoiskId, posterUrlPreview, nameRu, ratingKinopoisk)

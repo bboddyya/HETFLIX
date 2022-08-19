@@ -1,6 +1,7 @@
 import { Link } from "react-scroll";
 import FavoriteButton from "../Favorite Button/FavoriteButton";
 import { useSelector } from "react-redux";
+import { memo } from "react";
 
 function SingleMovieHeader({ id }) {
   const ratingValue = useSelector((state) =>
@@ -16,7 +17,9 @@ function SingleMovieHeader({ id }) {
       <div className="single-movie__header-info">
         <div className="single-movie__title-rating">
           <div className="single-movie__title">
-            <div className="single-movie__title-ru">{`${movie.nameRu} (${movie.year})`}</div>
+            <div className="single-movie__title-ru">{`${movie.nameRu} ${
+              movie.year ? `(${movie.year}) ` : ""
+            }`}</div>
             <div className="single-movie__title-en">{movie.nameOriginal}</div>
             <FavoriteButton movie={movie} />
           </div>
@@ -43,4 +46,4 @@ function SingleMovieHeader({ id }) {
   );
 }
 
-export default SingleMovieHeader;
+export default memo(SingleMovieHeader);

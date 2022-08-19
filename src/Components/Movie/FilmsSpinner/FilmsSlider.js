@@ -8,10 +8,10 @@ import { getRatingColor } from "../../../utils/getColor";
 import { motion } from "framer-motion";
 
 function FilmsSlider(props) {
-  const movies = props.movies;
-  const url = props.filmSLiderProperties.url;
-  const title = props.filmSLiderProperties.title;
+  const { movies } = props;
+  const { url, title } = props.filmSLiderProperties;
   console.log(title, "rendering");
+
   return (
     <div className="movie__card">
       <div className="movie__title">

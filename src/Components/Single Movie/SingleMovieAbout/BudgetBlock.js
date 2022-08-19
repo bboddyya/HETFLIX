@@ -3,9 +3,11 @@ import { useSelector } from "react-redux";
 export function BudgetBlock() {
   const boxOffice = useSelector((state) => state.movie.boxOfficeData.boxOffice);
 
+  const [boxOfficeExists] = boxOffice;
+
   return (
     <>
-      {boxOffice[0] && (
+      {boxOfficeExists && (
         <div className="about__block">
           <div className="about__title">Бюджет:</div>
           {boxOffice.map((el) => {

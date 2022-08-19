@@ -3,6 +3,7 @@ import { useSelector } from "react-redux/es/exports";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../FavoritesFilms/FavoritesFilms.scss";
+import { memo } from "react";
 
 function FavoritesFilms() {
   const favoriteFilms = useSelector((state) => state.ratingSelection.favorite);
@@ -39,4 +40,4 @@ function FavoritesFilms() {
   );
 }
 
-export default FavoritesFilms;
+export default memo(FavoritesFilms);

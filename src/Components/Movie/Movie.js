@@ -3,25 +3,19 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import FilmsSlider from "./FilmsSpinner/FilmsSlider";
 import { filmSLiderProperties } from "../../utils/filmsSliderProperties";
-import { useNavigate } from "react-router-dom";
+import { variants } from "../../utils/variantsForMotion";
+import { useMemo } from "react";
 
 function Movie() {
-  const movies250 = useSelector((state) => {
-    return state.movie.movies250.movieList;
-  });
-  const movies100 = useSelector((state) => {
-    return state.movie.movies100.movieList;
-  });
-  const moviesAwait = useSelector((state) => {
-    return state.movie.moviesAwait.movieList;
-  });
+  const movies250List = useSelector((state) => state.movie.movies250.movieList);
+  const movies250 = useMemo(() => movies250List, [movies250List]);
+  const movies100List = useSelector((state) => state.movie.movies100.movieList);
+  const movies100 = useMemo(() => movies100List, [movies100List]);
+  const moviesAwaitList = useSelector(
+    (state) => state.movie.moviesAwait.movieList
+  );
+  const moviesAwait = useMemo(() => moviesAwaitList, [moviesAwaitList]);
 
-  const variants = {
-    open: {
-      transition: { staggerChildren: 0.1, delayChildren: 1 },
-    },
-  };
-  console.log("Movie render");
   return (
     <motion.div
       initial={{ opacity: 0 }}

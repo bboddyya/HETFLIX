@@ -1,12 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useNavigate,
-  Navigate,
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import MainPageContainer from "./Containers/MainPageContainer";
 import PaginationContainer from "./Containers/PaginationContainer";
