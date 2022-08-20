@@ -20,11 +20,9 @@ function SearchResults({ setShowResults, setText }) {
   return (
     <div
       className="header-wrapper__search-results"
-      // onFocus={() => setShowResults(true)}
+      onFocus={() => setShowResults(true)}
       onClick={handleClick}
-      onBlur={() => {
-        setShowResults(false);
-      }}
+      onBlur={handleClick}
     >
       {searchLoading ? (
         <InputLoading />

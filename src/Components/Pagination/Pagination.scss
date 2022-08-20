@@ -6,6 +6,14 @@
   margin-top: 20px;
   margin-bottom: 20px;
   font-family: "Montserrat", sans-serif;
+  position: relative;
+
+  .movie__spinner {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    z-index: 15;
+  }
 
   .pagination__film {
     display: flex;
@@ -13,12 +21,15 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    border-radius: 20px;
 
     .poster {
       height: 330px;
       width: 230px;
       max-height: 430px;
+      background-color: rgb(150, 140, 140);
       position: relative;
+      border-radius: 20px;
 
       img {
         width: 100%;

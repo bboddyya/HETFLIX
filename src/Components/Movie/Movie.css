@@ -49,12 +49,17 @@ a {
 
 .movie__picture {
   position: relative;
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
 
 .movie__picture > img {
   height: 90%;
   width: 100%;
   border-radius: 20px;
+
   object-fit: cover;
   max-height: 430px;
 }
@@ -87,6 +92,11 @@ a {
   /* margin-right: -50%; */
 }
 
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+}
+
 .slick-slide > div {
   margin: 0 10px;
 }
@@ -105,15 +115,4 @@ a {
 
 .slick-track {
   overflow: visible !important;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  font-family: "slick";
-  font-size: 20px;
-  line-height: 1;
-  opacity: 0.75;
-  color: #000000;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }

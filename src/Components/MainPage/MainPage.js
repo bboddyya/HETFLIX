@@ -6,9 +6,13 @@ import { Routes, Route } from "react-router-dom";
 import { memo } from "react";
 
 function MainPage() {
-  const films250Ready = useSelector((state) => state.movie.movies250.isLoading);
-  const films100Ready = useSelector((state) => state.movie.movies100.isLoading);
-  const filmsAwaitReady = useSelector(
+  const films250Loading = useSelector(
+    (state) => state.movie.movies250.isLoading
+  );
+  const films100Loading = useSelector(
+    (state) => state.movie.movies100.isLoading
+  );
+  const filmsAwaitLoading = useSelector(
     (state) => state.movie.moviesAwait.isLoading
   );
 
@@ -18,7 +22,7 @@ function MainPage() {
         <Route
           path="/"
           element={
-            films250Ready && films100Ready && filmsAwaitReady ? (
+            films250Loading && films100Loading && filmsAwaitLoading ? (
               <ClipLoader
                 color="black  "
                 loading

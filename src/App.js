@@ -15,27 +15,29 @@ import Footer from "./Components/Footer/Footer";
 function App() {
   const isError = useSelector((state) => state.movie.errorStatus.isError);
   return (
-    <div className="App">
-      <Header />
-      <ScrollToTop>
-        {isError ? (
-          <Error />
-        ) : (
-          <Routes>
-            <Route path="/" element={<MainPageContainer />} />
-            <Route path="/films/:type" element={<PaginationContainer />} />
-            <Route path="/film/:id" element={<SingleMovieContainer />} />
-            <Route
-              path="/favorite-films"
-              element={<FavoritesFilmsContainer />}
-            />
-            <Route path="*" element={<Error />} />
-          </Routes>
-        )}
-      </ScrollToTop>
-      <UpArrow />
+    <>
+      <div className="App">
+        <Header />
+        <ScrollToTop>
+          {isError ? (
+            <Error />
+          ) : (
+            <Routes>
+              <Route path="/" element={<MainPageContainer />} />
+              <Route path="/films/:type" element={<PaginationContainer />} />
+              <Route path="/film/:id" element={<SingleMovieContainer />} />
+              <Route
+                path="/favorite-films"
+                element={<FavoritesFilmsContainer />}
+              />
+              <Route path="*" element={<Error />} />
+            </Routes>
+          )}
+        </ScrollToTop>
+        <UpArrow />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

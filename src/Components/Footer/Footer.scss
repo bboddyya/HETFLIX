@@ -1,9 +1,30 @@
+@mixin footer {
+  color: #deddda;
+
+  &:hover {
+    transform: scale(1.25);
+    transition: all ease-in-out 0.1s;
+    cursor: pointer;
+  }
+}
+
 .footer {
-  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 85px;
   width: 100%;
-  position: absolute;
-  background-color: black;
-  bottom: 0;
-  left: 0;
+  background-color: rgb(30, 30, 30);
   color: white;
+
+  &__about {
+    font-size: 18px;
+    @include footer();
+  }
+
+  &__github,
+  &__telegram {
+    @include footer();
+  }
 }
