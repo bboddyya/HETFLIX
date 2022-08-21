@@ -45,6 +45,7 @@ a {
   cursor: pointer;
   width: 30%;
   overflow: visible;
+  border-radius: 20px;
 }
 
 .movie__picture {
@@ -56,12 +57,10 @@ a {
 }
 
 .movie__picture > img {
-  height: 90%;
   width: 100%;
   border-radius: 20px;
-
   object-fit: cover;
-  max-height: 430px;
+  max-height: 430px !important;
 }
 
 .movie__rating {

@@ -14,6 +14,15 @@ $borderRadius: 8px;
   padding-top: 36px;
   padding-bottom: 36px;
 
+  @media (max-width: 1140px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  @media (max-width: 818px) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
   ::-webkit-scrollbar {
     height: 6px;
     width: 7px;
@@ -37,6 +46,14 @@ $borderRadius: 8px;
     padding-right: 30px;
     padding-left: 30px;
     font-family: "Montserrat";
+    @media (max-width: 1140px) {
+      padding-right: 25px;
+      padding-left: 25px;
+    }
+    @media (max-width: 818px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
     button {
       width: 101%;
       font-size: 25px;
@@ -48,6 +65,13 @@ $borderRadius: 8px;
       font-family: "Montserrat";
       cursor: pointer;
       transition: all 0.2s ease-out;
+
+      @media (max-width: 1140px) {
+        font-size: 20px;
+      }
+      @media (max-width: 818px) {
+        font-size: 12px;
+      }
     }
     button:hover {
       background-color: #deddda;
@@ -76,6 +100,18 @@ $borderRadius: 8px;
       background-color: transparent;
       transition: all 0.3s ease;
       color: #deddda;
+
+      @media (max-width: 1140px) {
+        font-size: 18px;
+        margin-bottom: 10px;
+        height: 40px;
+      }
+      @media (max-width: 818px) {
+        font-size: 12px;
+        padding: 3px;
+        margin-bottom: 5px;
+        height: 25px;
+      }
     }
 
     input::placeholder {
@@ -108,6 +144,18 @@ $borderRadius: 8px;
       margin-bottom: 10px;
       color: #deddda;
 
+      @media (max-width: 1140px) {
+        font-size: 18px;
+        height: 200px;
+        margin-bottom: 7px;
+      }
+      @media (max-width: 818px) {
+        font-size: 12px;
+        padding: 3px;
+        margin-bottom: 5px;
+        height: 150px;
+      }
+
       &:active {
         background-color: green($color: #000000);
       }
@@ -139,6 +187,17 @@ $borderRadius: 8px;
     max-height: 554px;
     overflow-y: scroll;
 
+    @media (max-width: 1140px) {
+      padding-right: 45px;
+      padding-left: 25px;
+      max-height: 350px;
+    }
+    @media (max-width: 818px) {
+      padding-right: 30px;
+      padding-left: 15px;
+      max-height: 289px;
+    }
+
     .reviews-list__element {
       background-color: transparent;
       padding: 20px;
@@ -147,6 +206,13 @@ $borderRadius: 8px;
       margin-bottom: 5px;
       color: #deddda;
       font-family: "Montserrat", sans-serif;
+
+      @media (max-width: 1140px) {
+        padding: 17px;
+      }
+      @media (max-width: 818px) {
+        padding: 10px;
+      }
 
       .reviews-list__header {
         display: flex;
@@ -157,21 +223,56 @@ $borderRadius: 8px;
 
         .reviews-list__name {
           font-size: 20px;
+          @media (max-width: 1140px) {
+            font-size: 15px;
+          }
+          @media (max-width: 818px) {
+            font-size: 12px;
+          }
         }
         .reviews-list__date {
           font-size: 20px;
+          @media (max-width: 1140px) {
+            font-size: 15px;
+          }
+          @media (max-width: 818px) {
+            font-size: 9px;
+          }
         }
       }
       .reviews-list__main {
+        overflow-y: hidden;
         font-size: 25px;
+
+        @media (max-width: 1140px) {
+          font-size: 18px;
+        }
+        @media (max-width: 818px) {
+          font-size: 12px;
+        }
         h3 {
           margin: 10px 0;
           font-size: 20px;
+
+          @media (max-width: 1140px) {
+            font-size: 15px;
+          }
+          @media (max-width: 818px) {
+            font-size: 10px;
+          }
         }
 
         .reviews-list__text {
           max-height: 300px;
           overflow-y: scroll;
+          word-wrap: break-word;
+
+          @media (max-width: 1140px) {
+            font-size: 18px;
+          }
+          @media (max-width: 818px) {
+            font-size: 12px;
+          }
         }
       }
     }

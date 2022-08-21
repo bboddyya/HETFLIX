@@ -31,7 +31,6 @@ export function RatingSelection(props) {
                 onClick={() => handleRating(ratingValue, id)}
               />
               <GiPlainCircle
-                size={35}
                 className="rating-selection__star"
                 onMouseEnter={() => setHover(ratingValue)}
                 onMouseLeave={() => setHover(null)}

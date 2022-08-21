@@ -1,4 +1,3 @@
-import "../Movie.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,11 +5,12 @@ import { settings } from "../../../utils/sliderSettings";
 import { Link } from "react-router-dom";
 import { getRatingColor } from "../../../utils/getColor";
 import { motion } from "framer-motion";
+import "../Movie.css";
+import "./FilmSpinnerAdaptive.scss";
 
 function FilmsSlider(props) {
   const { movies } = props;
   const { url, title } = props.filmSLiderProperties;
-  console.log(title, "rendering");
 
   return (
     <div className="movie__card">
@@ -55,10 +55,6 @@ function FilmsSlider(props) {
             </motion.div>
           );
         })}
-
-        {/* {movies.map((props) => {
-          return <SliderElement {...props} key={props.id} />;
-        })} */}
       </Slider>
     </div>
   );

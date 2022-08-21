@@ -40,12 +40,11 @@ function Input() {
         {showResults ? (
           <IoCloseOutline
             color="white"
-            size={29}
             className="search-icon"
             onClick={handleRemoveInput}
           />
         ) : (
-          <IoSearchOutline color="white" size={29} className="search-icon" />
+          <IoSearchOutline color="white" className="search-icon" />
         )}
       </div>
       {showResults && (

@@ -7,6 +7,13 @@
     font-size: 35px;
     cursor: pointer;
     transition: all 0.2s ease-out;
+
+    @media (max-width: 1140px) {
+      font-size: 25px;
+    }
+    @media (max-width: 818px) {
+      font-size: 18px;
+    }
   }
   .icon:hover {
     color: rgb(111, 111, 111);
@@ -19,6 +26,13 @@
     font-size: 20px;
     cursor: pointer;
     transition: all 0.2s ease-out;
+
+    @media (max-width: 1140px) {
+      font-size: 15px;
+    }
+    @media (max-width: 818px) {
+      font-size: 10px;
+    }
   }
   span:hover {
     color: rgb(111, 111, 111);
