@@ -2,7 +2,7 @@ import { setFavorite, removeFavorite } from "../../../redux/actions/actions";
 import { MdOutlineBookmarkBorder, MdOutlineBookmark } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import "./FavoriteButton.scss";
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 
 function FavoriteButton() {
   const dispatch = useDispatch();
@@ -47,4 +47,4 @@ function FavoriteButton() {
   );
 }
 
-export default FavoriteButton;
+export default memo(FavoriteButton);

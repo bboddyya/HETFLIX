@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Input from "./Input/Input";
 import { BsBookmark } from "react-icons/bs";
 import { memo } from "react";
+import netflix from "../../img/netflix.png";
 
 function Header() {
   console.log("Header render");
@@ -13,9 +14,10 @@ function Header() {
           <Link to="/">
             <div className="header-wrapper__logo">
               <img
-                src="https://www.freepnglogos.com/uploads/netflix-logo-text-emblem-31.png"
+                // src="https://psv4.userapi.com/c534536/u72282690/docs/d30/f0716afb3b16/netflix.png?extra=pgOwY34CD42UIdCBTy_NBqWr8kgFCaY_7HAmyJb3yiBU7UjTCEBChSofRCcMYfH3IjVr-87647k3nyBM1F0Uk6dEUrt3Z7VlvmHRByGeuIx93kY7ppetTiHsG4HBm2g7cTC-ZsDGW3uOoZMr82SiTtfuMA"
                 width="200"
                 alt="netflix logo text emblem"
+                src={netflix}
               />
             </div>{" "}
           </Link>

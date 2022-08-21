@@ -2,6 +2,7 @@ import { Link } from "react-scroll";
 import FavoriteButton from "../Favorite Button/FavoriteButton";
 import { useSelector } from "react-redux";
 import { memo } from "react";
+import { motion } from "framer-motion";
 
 function SingleMovieHeader({ id }) {
   const ratingValue = useSelector((state) =>
@@ -12,7 +13,11 @@ function SingleMovieHeader({ id }) {
   return (
     <div className="single-movie__header">
       <div className="single-movie__poster">
-        <img src={movie.posterUrl} />
+        <motion.img
+          src={movie.posterUrl}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        />
       </div>
       <div className="single-movie__header-info">
         <div className="single-movie__title-rating">

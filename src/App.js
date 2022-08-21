@@ -11,6 +11,7 @@ import SingleMovieContainer from "./Containers/SingleMovieContainer";
 import Error from "./Components/Error/Error";
 import { useSelector } from "react-redux/es/exports";
 import Footer from "./Components/Footer/Footer";
+import About from "./Components/About/About";
 
 function App() {
   const isError = useSelector((state) => state.movie.errorStatus.isError);
@@ -31,6 +32,7 @@ function App() {
                 element={<FavoritesFilmsContainer />}
               />
               <Route path="*" element={<Error />} />
+              <Route path="/about" element={<About />} />
             </Routes>
           )}
         </ScrollToTop>

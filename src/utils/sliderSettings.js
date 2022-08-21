@@ -6,7 +6,6 @@ export const settings = {
   slidesToScroll: 5,
   initialSlide: 0,
   adaptiveHeight: true,
-  adaptiveHeight: true,
   draggable: false,
 
   responsive: [
@@ -17,6 +16,7 @@ export const settings = {
         slidesToScroll: 3,
         infinite: true,
         dots: true,
+        draggable: true,
       },
     },
     {
@@ -25,6 +25,7 @@ export const settings = {
         slidesToShow: 2,
         slidesToScroll: 2,
         initialSlide: 2,
+        draggable: true,
       },
     },
     {
@@ -32,6 +33,7 @@ export const settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        draggable: true,
       },
     },
   ],
