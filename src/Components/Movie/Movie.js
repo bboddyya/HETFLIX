@@ -1,4 +1,5 @@
 import "./Movie.css";
+
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import FilmsSlider from "./FilmsSpinner/FilmsSlider";

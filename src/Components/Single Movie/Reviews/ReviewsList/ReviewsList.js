@@ -23,7 +23,7 @@ function ReviewsList({ id }) {
           );
         })
       ) : (
-        <div style={{ color: "#deddda" }}>
+        <div style={{ color: "#deddda" }} className="reviews-list__plug">
           <h1>Рецензий пока что нет.</h1>
           <h2>Напишите первым!</h2>
         </div>

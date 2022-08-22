@@ -1,0 +1,10 @@
+.movie__spinner {
+  font-size: 250px;
+  position: fixed;
+  top: 45%;
+  right: 45%;
+  z-index: 15;
+  @media (min-width: 1000px) {
+    font-size: 500px;
+  }
+}

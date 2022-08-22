@@ -32,3 +32,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.movie__spinner {
+  font-size: 250px;
+  position: fixed;
+  top: 45%;
+  right: 45%;
+  z-index: 15;
+}

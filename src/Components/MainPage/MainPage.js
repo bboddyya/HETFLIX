@@ -4,6 +4,7 @@ import { ClipLoader } from "react-spinners";
 import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import { memo } from "react";
+// import "../LoaderSpiner/LoaderSpinerAdaptive.scss";
 
 function MainPage() {
   const films250Loading = useSelector(
@@ -24,9 +25,9 @@ function MainPage() {
           element={
             films250Loading && films100Loading && filmsAwaitLoading ? (
               <ClipLoader
-                color="black  "
+                color="black"
                 loading
-                size={100}
+                size={75}
                 speedMultiplier={0.8}
                 className="movie__spinner"
               />

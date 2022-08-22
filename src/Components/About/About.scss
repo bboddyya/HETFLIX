@@ -5,11 +5,26 @@
     width: 50%;
     margin: 0 auto;
     font-size: 22px;
+
+    @media (max-width: 1338px) {
+      width: 80%;
+    }
+    @media (max-width: 892px) {
+      width: 90%;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 18px;
+    }
   }
   &__credit {
     width: 100%;
     text-align: center;
     font-size: 28px;
     margin: 20px 0px;
+
+    @media (max-width: 500px) {
+      font-size: 21px;
+    }
   }
 }

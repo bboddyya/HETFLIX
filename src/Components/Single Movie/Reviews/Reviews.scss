@@ -187,6 +187,25 @@ $borderRadius: 8px;
     max-height: 554px;
     overflow-y: scroll;
 
+    .reviews-list__plug {
+      @media (max-width: 1140px) {
+        h1 {
+          font-size: 25px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+      }
+      @media (max-width: 818px) {
+        h1 {
+          font-size: 15px;
+        }
+        h2 {
+          font-size: 10px;
+        }
+      }
+    }
+
     @media (max-width: 1140px) {
       padding-right: 45px;
       padding-left: 25px;

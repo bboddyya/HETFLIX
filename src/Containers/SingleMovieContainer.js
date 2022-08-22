@@ -42,7 +42,7 @@ function SingleMovieContainer() {
     <ClipLoader
       color="black"
       loading
-      size={100}
+      size={75}
       speedMultiplier={0.8}
       className="movie__spinner"
     />

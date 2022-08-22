@@ -111,8 +111,15 @@
       color: white;
       cursor: pointer;
       font-size: 27px;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.25s ease-in-out;
       @extend %fontstyle;
+
+      .header-wrapper__favorite-movie:hover {
+        transform: scale(1.1);
+      }
+      .header-wrapper__favorite-movie:active {
+        transform: scale(0.9);
+      }
 
       .header-wrapper__favorite-movie:hover {
         @extend %hoverHeader;

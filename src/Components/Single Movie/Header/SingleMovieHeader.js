@@ -36,7 +36,7 @@ function SingleMovieHeader({ id }) {
               className="single-movie__rating-user"
               to="test1"
               smooth={true}
-              offset={-100}
+              offset={-180}
               duration={300}
             >
               {ratingValue.length ? ratingValue[0].rating : "Оцените фильм"}

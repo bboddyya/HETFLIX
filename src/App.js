@@ -12,6 +12,7 @@ import Error from "./Components/Error/Error";
 import { useSelector } from "react-redux/es/exports";
 import Footer from "./Components/Footer/Footer";
 import About from "./Components/About/About";
+// import "../src/Components/LoaderSpiner/LoaderSpinerAdaptive.scss";
 
 function App() {
   const isError = useSelector((state) => state.movie.errorStatus.isError);

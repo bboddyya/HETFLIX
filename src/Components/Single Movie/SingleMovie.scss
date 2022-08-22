@@ -79,6 +79,16 @@
         justify-content: space-between;
         .single-movie__rating-user {
           cursor: pointer;
+          @media (max-width: 1140px) {
+            font-size: 15px;
+          }
+          @media (max-width: 818px) {
+            font-size: 10px;
+          }
+
+          // @media (max-width: 500px) {
+          //   font-size: 8px;
+          // }
         }
       }
 

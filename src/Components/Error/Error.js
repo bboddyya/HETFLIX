@@ -21,14 +21,7 @@ function Error() {
           </Link>
         </div>
         <div className="error__gif">
-          <iframe
-            src={gif}
-            width="480"
-            height="400"
-            frameBorder="0"
-            className="giphy-embed"
-            allowFullScreen
-          />
+          <img src={gif} />
         </div>
       </div>
     </div>
