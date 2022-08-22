@@ -1,0 +1,299 @@
+$colorInput: #ffffffa8;
+$colorInputFocus: rgba(255, 255, 255, 0.838);
+$placeholderColor: #deddda;
+$borderRadius: 8px;
+.reviews__wrapper {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+  margin-top: 17px;
+  width: 100%;
+  justify-content: space-evenly;
+  font-family: "Montserrat", sans-serif;
+  background-color: #000001;
+  padding-top: 36px;
+  padding-bottom: 36px;
+
+  @media (max-width: 1140px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  @media (max-width: 818px) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  ::-webkit-scrollbar {
+    height: 6px;
+    width: 7px;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(40, 79, 151);
+    -webkit-border-radius: 0px;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar-corner {
+    background: rgb(255, 255, 255);
+    -webkit-border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .reviews-input__wrapper {
+    flex: 0 0 30%;
+    border-radius: $borderRadius;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-family: "Montserrat";
+    @media (max-width: 1140px) {
+      padding-right: 25px;
+      padding-left: 25px;
+    }
+    @media (max-width: 818px) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+    button {
+      width: 101%;
+      font-size: 25px;
+      padding: 5px;
+      outline: none;
+      background-color: #38383899;
+      color: #deddda;
+      border: none;
+      font-family: "Montserrat";
+      cursor: pointer;
+      transition: all 0.2s ease-out;
+
+      @media (max-width: 1140px) {
+        font-size: 20px;
+      }
+      @media (max-width: 818px) {
+        font-size: 12px;
+      }
+    }
+    button:hover {
+      background-color: #deddda;
+      color: black;
+    }
+
+    button:active {
+      transform: scale(0.95);
+      background-color: #9b9b9b;
+    }
+    h1 {
+      color: $colorInput;
+    }
+
+    input {
+      height: 50px;
+      font-size: 23px;
+      text-decoration: none;
+      border: none;
+      outline: none;
+      border-radius: $borderRadius;
+      border: solid 2px rgba(189, 189, 189, 0.548);
+      padding: 5px;
+      margin-bottom: 10px;
+      font-family: "Montserrat";
+      background-color: transparent;
+      transition: all 0.3s ease;
+      color: #deddda;
+
+      @media (max-width: 1140px) {
+        font-size: 18px;
+        margin-bottom: 10px;
+        height: 40px;
+      }
+      @media (max-width: 818px) {
+        font-size: 12px;
+        padding: 3px;
+        margin-bottom: 5px;
+        height: 25px;
+      }
+    }
+
+    input::placeholder {
+      color: $placeholderColor;
+    }
+    input:focus {
+      border: solid 2px #f0ce65b9;
+    }
+
+    textarea::placeholder {
+      color: $placeholderColor;
+    }
+
+    textarea:focus {
+      border: solid 2px #f0ce65b9;
+    }
+    textarea {
+      font-size: 23px;
+      padding: 5px;
+      outline: none;
+      text-decoration: none;
+      font-family: "Montserrat";
+      width: 100%;
+      resize: none;
+      border-radius: $borderRadius;
+      border: solid 2px rgba(189, 189, 189, 0.548);
+      height: 300px;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      margin-bottom: 10px;
+      color: #deddda;
+
+      @media (max-width: 1140px) {
+        font-size: 18px;
+        height: 200px;
+        margin-bottom: 7px;
+      }
+      @media (max-width: 818px) {
+        font-size: 12px;
+        padding: 3px;
+        margin-bottom: 5px;
+        height: 150px;
+      }
+
+      &:active {
+        background-color: green($color: #000000);
+      }
+    }
+
+    .reviews-input__name-input {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+    }
+
+    .reviews-input__title-input {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+    }
+
+    .reviews-input__add-button {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  .reviews-list__wrapper {
+    flex: 0 0 39%;
+    padding-right: 60px;
+    padding-left: 30px;
+    max-height: 554px;
+    overflow-y: scroll;
+
+    .reviews-list__plug {
+      @media (max-width: 1140px) {
+        h1 {
+          font-size: 25px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+      }
+      @media (max-width: 818px) {
+        h1 {
+          font-size: 15px;
+        }
+        h2 {
+          font-size: 10px;
+        }
+      }
+    }
+
+    @media (max-width: 1140px) {
+      padding-right: 45px;
+      padding-left: 25px;
+      max-height: 350px;
+    }
+    @media (max-width: 818px) {
+      padding-right: 30px;
+      padding-left: 15px;
+      max-height: 289px;
+    }
+
+    .reviews-list__element {
+      background-color: transparent;
+      padding: 20px;
+      border-radius: $borderRadius;
+      border: solid 2px #deddda67;
+      margin-bottom: 5px;
+      color: #deddda;
+      font-family: "Montserrat", sans-serif;
+
+      @media (max-width: 1140px) {
+        padding: 17px;
+      }
+      @media (max-width: 818px) {
+        padding: 10px;
+      }
+
+      .reviews-list__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-bottom: solid 1px #deddda67;
+        width: 100%;
+
+        .reviews-list__name {
+          font-size: 20px;
+          @media (max-width: 1140px) {
+            font-size: 15px;
+          }
+          @media (max-width: 818px) {
+            font-size: 12px;
+          }
+        }
+        .reviews-list__date {
+          font-size: 20px;
+          @media (max-width: 1140px) {
+            font-size: 15px;
+          }
+          @media (max-width: 818px) {
+            font-size: 9px;
+          }
+        }
+      }
+      .reviews-list__main {
+        overflow-y: hidden;
+        font-size: 25px;
+
+        @media (max-width: 1140px) {
+          font-size: 18px;
+        }
+        @media (max-width: 818px) {
+          font-size: 12px;
+        }
+        h3 {
+          margin: 10px 0;
+          font-size: 20px;
+
+          @media (max-width: 1140px) {
+            font-size: 15px;
+          }
+          @media (max-width: 818px) {
+            font-size: 10px;
+          }
+        }
+
+        .reviews-list__text {
+          max-height: 300px;
+          overflow-y: scroll;
+          word-wrap: break-word;
+
+          @media (max-width: 1140px) {
+            font-size: 18px;
+          }
+          @media (max-width: 818px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

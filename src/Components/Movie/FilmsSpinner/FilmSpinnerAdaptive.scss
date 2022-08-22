@@ -1,0 +1,29 @@
+.movie__card {
+  .movie__title h1 {
+    @media (max-width: 1024px) {
+      font-size: 21px;
+    }
+    @media (max-width: 600px) {
+      font-size: 12px;
+    }
+  }
+
+  .movie__title span {
+    @media (max-width: 1024px) {
+      font-size: 15px;
+    }
+    @media (max-width: 600px) {
+      font-size: 10px;
+    }
+  }
+
+  .movie__wrapper {
+    .movie__picture {
+      img {
+        @media (max-width: 480px) {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

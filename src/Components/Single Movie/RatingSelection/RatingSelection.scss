@@ -1,0 +1,16 @@
+.rating-selection {
+  display: flex;
+  font-family: "Montserrat", sans-serif;
+
+  &__star {
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
