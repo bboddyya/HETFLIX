@@ -11,24 +11,29 @@
 -   Ставить оценки
 -   Писать рецензии
 
-![](https://s4.gifyu.com/images/gif-scene1.gif)
+![gif-scene1](https://user-images.githubusercontent.com/102018823/186218311-fc811555-1727-40ee-852a-91b9f646c2d4.gif)
+
 #
 Я осуществил имитацию сервера с помощью библиотеки  **Redux-Persist**, которая позволяет сохранять ваши отметки, любимые фильмы и рецензии в localStorage, чтобы они оставались с вами после обновления страницы.
 
+![gif-scene2](https://user-images.githubusercontent.com/102018823/186218350-794920c6-7754-4a00-b8e8-c62b03f680bf.gif)
 
-![](https://s4.gifyu.com/images/gif-scene2.gif)
 #
 Так же я реализовал кастомную динамическую **пагинацию**  по скроллу без сторонних библиотек.
 
-![](https://s4.gifyu.com/images/gif-scene3.gif)
+![gif-scene3](https://user-images.githubusercontent.com/102018823/186218392-5d62f1ce-d1a5-4aa5-a36f-fdff8ed28c71.gif)
 
 #
 Для анимации я изучил и использовал библиотеку  **Framer-motion и React-Slick**. Для создания стилей работал с препроцессором **SASS**  , используя практически весь его богатый функционал, так же применял методолгию **БЭМ**. **Адаптивная верстка**  реализована с помощью медиа-запросов & breakPoint’ам.
 
-![](https://s4.gifyu.com/images/gif-scene4.gif)
+![gif-scene4](https://user-images.githubusercontent.com/102018823/186218527-2fe00788-6673-49da-b576-6face0941257.gif)
+
+
 #
 Все запросы к серверу создаются в конструкции  **try-catch**, и при какой либо ошибке пользователь увидит заглушку, вместо полностью упавшего UI.
-![](https://s4.gifyu.com/images/gif-scene5.gif)
+
+![gif-scene5](https://user-images.githubusercontent.com/102018823/186219162-259fa581-dfdd-41c9-afb2-2654da0cc7ae.gif)
+
 #
 Поработал над оптимизацией(**HOC, React.Memo**), расширил и закрепил свои знания о  **хуках**  :
 
